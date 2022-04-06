@@ -1,0 +1,56 @@
+.featured_header{
+    background-image: url(../images/background-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Rubik Glitch",Arial, Helvetica, sans-serif;
+}
+.featured_item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+    min-height: 30rem;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.featured_item_img{
+    position: relative;
+    width: 70%;
+    height: 16rem;
+    z-index: -5;
+}
+
+.product_absolute{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #051113a1;
+    place-content: center;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.35s;
+    z-index: -4;
+}
+
+.featured_item:hover .product_absolute{
+    opacity: 1;
+}
+
+.featured_item h3{
+    color: var(--bs-primary);
+}
+
+.btn_show{
+    transform: scale(0.7);
+    transition: 0.5s;
+    z-index: 50;
+}
+
+.featured_item:hover .btn_show{
+    transform: scale(1);
+}

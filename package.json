@@ -6,12 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "compile": "node-sass sass/main.scss styles/bootstrap.css -w"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "bootstrap": "^5.1.3",
+    "firebase": "^9.6.10",
     "next": "12.1.4",
+    "node-sass": "^7.0.1",
     "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react-bootstrap": "^2.2.2",
+    "react-dom": "18.0.0",
+    "redux": "^4.1.2"
   },
   "devDependencies": {
     "eslint": "8.12.0",

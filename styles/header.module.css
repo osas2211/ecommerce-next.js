@@ -1,0 +1,45 @@
+.main_header{
+    border-bottom: 0.1px solid rgba(0, 0, 0, 0.089);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.list{
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.list svg{
+    width: 0.9rem;
+}
+
+
+.list a{
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.list a::after{
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.87);
+    height: 1px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: .25s;
+}
+
+.list a:hover::after{
+    transform: translateX(0%);
+}
