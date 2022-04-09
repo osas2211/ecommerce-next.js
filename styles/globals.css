@@ -8,6 +8,24 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+::-webkit-scrollbar{
+  width: .4rem;
+  
+}
+::-webkit-scrollbar-thumb{
+  background: var(--bs-dark);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: var(--bs-light);
+}
+
+::selection{
+  background: var(--bs-primary);
+  color: var(--bs-light);
+}
+
 .info{
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.644);
@@ -77,6 +95,7 @@ a {
 .center-y{
   top: 50%;
 }
+
 
 @media (max-width: 900px) {
   .img, .img2{

@@ -1,0 +1,25 @@
+.best_sellers{
+    margin: 8rem auto;
+    /* background-color: rgba(197, 197, 197, 0.226); */
+}
+
+.best_sellers ul{
+    list-style: none;
+    padding: 0;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.best_sellers li{
+    display: inline-block;
+    margin: 0rem;
+    padding: 0;
+    cursor: pointer;
+}
+
+.active{
+    background-color: var(--bs-primary);
+    color: var(--bs-light);
+    padding: 0.6rem 1.5rem;
+    border-radius: 20px;
+}

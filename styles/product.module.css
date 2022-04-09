@@ -1,0 +1,89 @@
+.product{
+    padding: 1rem 1rem 3rem 1rem;
+    border: 1px solid rgba(122, 122, 122, 0.108);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.img{
+    position: relative;
+    width: 11rem;
+    height: 11rem;
+    transition: .3s;
+}
+
+.product:hover .img{
+    transform: scale(1.2);
+}
+
+.product_details{
+    text-align: center;
+}
+
+.product_details small{
+    font-size: 0.85rem;
+}
+
+.product_details small:first-child{
+    font-size: 0.8rem;
+    color: var(--bs-primary);
+}
+
+.product_details p{
+    font-size: 0.85rem;
+}
+
+
+.btn{
+    background-color: var(--bs-primary);
+    color: #fff;
+    width: 50%;
+    padding: 0.7rem 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-block;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* transform: translateX(-101%); */
+    transition: .3s;
+}
+
+.btn_{
+    background-color: var(--bs-dark);
+    color: #fff;
+    width: 50%;
+    padding: 0.7rem 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-block;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    /* transform: translateX(101%); */
+    transition: .3s;
+}
+
+.btn:hover, .btn_:hover{
+    color: #fff;
+    opacity: 0.85;
+}
+
+/* .product:hover .btn{
+    transform: translateX(0);
+}
+
+.product:hover .btn_{
+    transform: translateX(0);
+} */
