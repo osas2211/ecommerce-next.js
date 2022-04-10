@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&family=Raleway:wght@400;500;800&family=Rubik+Glitch&display=swap');
-
+:root{
+  --bg-color: #f3f5f6;
+}
 html,
 body {
   padding: 0;

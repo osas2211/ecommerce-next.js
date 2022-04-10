@@ -38,8 +38,8 @@ export default function BestSellers() {
         setWatches(false)
     }
   return (
-    <div className={styles.best_sellers + " container"}>
-        <div className='d-lg-flex text-uppercase justify-content-between align-items-center'>
+    <div className={styles.best_sellers + " "}>
+        <div className='d-lg-flex container-fluid text-uppercase justify-content-between align-items-center'>
             <h5 className='text-uppercase fw-bold text-center mb-5 mb-lg-0'>best sellers</h5>
             <ul className='text-center'>
                 <li className={'me-5 active'} onClick={handlePhones}><span className={phones && styles.active}>smartphones</span></li>
@@ -49,12 +49,19 @@ export default function BestSellers() {
             </ul>
         </div>
 
-        <div className='row my-5 justify-content-center'>
+        <div className={styles.best_sellers_products}>
             {phones && <Phones />}
             {laptops  && <Laptops />}
             {watches && <Watches />}
             {gadgets && <Gadgets />}
         </div>
+
+        {/* <div className='row my-5 justify-content-center'>
+            {phones && <Phones />}
+            {laptops  && <Laptops />}
+            {watches && <Watches />}
+            {gadgets && <Gadgets />}
+        </div> */}
     </div>
   )
 }

@@ -1,6 +1,8 @@
 .best_sellers{
     margin: 8rem auto;
-    /* background-color: rgba(197, 197, 197, 0.226); */
+    padding: 5rem 2rem;
+    height: 45rem;
+    background-color: rgba(197, 197, 197, 0.226);
 }
 
 .best_sellers ul{
@@ -22,4 +24,14 @@
     color: var(--bs-light);
     padding: 0.6rem 1.5rem;
     border-radius: 20px;
+    transition: .25s;
+}
+
+.best_sellers_products{
+    margin: 4rem 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    justify-content: start;
+    align-items: start;
 }
