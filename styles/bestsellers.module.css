@@ -1,5 +1,5 @@
 .best_sellers{
-    margin: 8rem auto;
+    margin: 8rem auto 0 auto;
     padding: 5rem 2rem;
     height: 45rem;
     background-color: rgba(197, 197, 197, 0.226);
@@ -34,4 +34,26 @@
     gap: 1.5rem;
     justify-content: start;
     align-items: start;
+}
+
+
+@media (max-width: 1000px) {
+    .best_sellers{
+        height: auto;
+    }
+    .best_sellers_products{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 900px){
+    .best_sellers_products{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .best_sellers_products{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

@@ -10,9 +10,9 @@ export default function Home() {
     <div className="home">
       <HomeHero />
       <Hero />
-      <Featured />
       <ChooseUs />
       <BestSellers />
+      <Featured />
     </div>
   )
 }
