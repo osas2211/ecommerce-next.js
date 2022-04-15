@@ -1,0 +1,83 @@
+.cart{
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    right: 0;
+    width: 22rem;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 2px 4px 11px rgb(121, 118, 118);
+    animation-name: slideRight;
+    animation-duration: .4s;
+    overflow-y: scroll;
+}
+
+.header{
+    background-color: rgba(197, 197, 197, 0.226);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header p{
+    padding: 0;
+    margin: 0;
+}
+
+.header a{
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.empty{
+    margin-top: 4rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.empty a{
+    display: inline;
+    margin: auto;
+    text-align: center;
+}
+.empty_cart svg{
+    width: 4rem;
+    font-size: 2rem;
+    color: var(--bs-danger);
+}
+.img{
+    position: relative;
+    height: 5rem;
+    width: 5rem;
+}
+
+.product{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid rgba(99, 99, 99, 0.267);
+}
+.product .info{
+    font-size: 1rem;
+    padding: 0 1rem 0 0.5rem;
+}
+.product small{
+    font-size: 1rem;
+}
+.delete{
+    font-weight: bold;
+    cursor: pointer;
+}
+@keyframes slideRight {
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}

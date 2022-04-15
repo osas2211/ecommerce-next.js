@@ -26,6 +26,7 @@
     display: inline-block;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .list a::after{
@@ -42,4 +43,23 @@
 
 .list a:hover::after{
     transform: translateX(0%);
+}
+
+.cart{
+    position: relative;
+}
+
+.cart span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(70%, -50%);
+    font-weight: bold;
+    width: 1.3rem;
+    height: 1.3rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--bs-light);
+    border-radius: 100%;
+    background-color: var(--bs-dark);
 }

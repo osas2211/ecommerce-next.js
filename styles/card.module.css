@@ -41,6 +41,7 @@
     color: var(--bs-primary);
     font-weight: bold;
     text-transform: capitalize;
+    z-index: 500;
 }
 
 .rating{
@@ -70,6 +71,7 @@
     transition: all .35s;
     animation-name: moveUp;
     animation-duration: .5s;
+    cursor: pointer;
 }
 
 

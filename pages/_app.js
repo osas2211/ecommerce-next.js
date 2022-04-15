@@ -2,12 +2,15 @@ import "../styles/bootstrap.css"
 import '../styles/globals.css'
 import '../styles/btn.css'
 import Layout from '../components/Layout'
+import { CartProvider } from "../context/CartContext"
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <CartProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </CartProvider>
   )
 }
 

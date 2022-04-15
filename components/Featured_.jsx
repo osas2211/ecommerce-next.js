@@ -12,28 +12,31 @@ import ProductCardSmall from './ProductCardSmall'
 export default function Featured() {
   return (
     <div className={styles.featured}>
-      <div className={styles.one}>
-        <div className={styles.img}>
-          <Image src={img} alt="" layout='fill' />
-        </div>
-
-        <div className={styles.product_details}>
-          <p className={styles.title}>Unlocked gallaxy mobile phone.</p>
-          <p className={styles.rating}>
-            <Rating rating_value={3} />
-          </p>
-          <div className='mb-3'>
-            <span className={` fw-bold ${styles.amount}`}>$199</span>
-            <span className='px-3 text-muted'><strike>$259</strike></span>
+      <h3>Top Featured Products</h3>
+      <div className={styles.featured_detail}>
+        <div className={styles.one}>
+          <div className={styles.img}>
+            <Image src={img} alt="" layout='fill' />
           </div>
-          <p className={styles.desc}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium unde aliquam sequi quidem est saepe dolores aperiam minima distinctio omnis Lorem ipsum dolor sit.</p>
-          <Link href={"/"}><a className='btn-custom-1'>add to cart</a></Link>
-        </div> 
+
+          <div className={styles.product_details}>
+            <p className={styles.title}>Unlocked gallaxy mobile phone.</p>
+            <p className={styles.rating}>
+              <Rating rating_value={3} />
+            </p>
+            <div className='mb-3'>
+              <span className={` fw-bold ${styles.amount}`}>$199</span>
+              <span className='px-3 text-muted'><strike>$259</strike></span>
+            </div>
+            <p className={styles.desc}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium unde aliquam sequi quidem est saepe dolores aperiam minima distinctio omnis Lorem ipsum dolor sit.</p>
+            <Link href={"/"}><a className='btn-custom-1'>add to cart</a></Link>
+          </div> 
+        </div>
+        <ProductCardSmall img={img} title="a80 pro 4g unlocked cell phones" rating={3}/>
+        <ProductCardSmall img={img2} title="a80 pro 4g unlocked cell phones" rating={3}/>
+        <ProductCardSmall img={img4} title="a80 pro 4g unlocked cell phones" rating={3}/>
+        <ProductCardSmall img={img3} title="a80 pro 4g unlocked cell phones" rating={3}/>
       </div>
-      <ProductCardSmall img={img} title="a80 pro 4g unlocked cell phones" rating={3}/>
-      <ProductCardSmall img={img2} title="a80 pro 4g unlocked cell phones" rating={3}/>
-      <ProductCardSmall img={img4} title="a80 pro 4g unlocked cell phones" rating={3}/>
-      <ProductCardSmall img={img3} title="a80 pro 4g unlocked cell phones" rating={3}/>
     </div>
   )
 }

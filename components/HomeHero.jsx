@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from "../styles/Home.module.css"
 import product from "../images/iphone12-max.png";
 import product2 from "../images/product-preview-4.jpg";
 import Image from "next/image";
 import { Carousel } from "react-bootstrap";
+import { actions, useCart } from '../context/CartContext';
 
 export default function HomeHero() {
+  const [state, dispatch] = useCart()
+  const add = ()=>{
+    dispatch({type: actions.ADD_TO_CART, payload: 1})
+  }
   return (
     <div>
         <Carousel variant="dark" className="pb-5 mt-5 pt-5 px-3">
@@ -19,7 +24,7 @@ export default function HomeHero() {
               <p className="text-uppercase mb-0">starting from <span>$1999.99</span></p>
               <div className="pt-3">
                 <a href="" className="btn-custom-2 me-3">Learn more</a>
-                <a href="" className="btn-custom-1">Add to cart</a>
+                <a href="#" onClick={add} className="btn-custom-1">Add to cart</a>
               </div>
             </div>
 
@@ -42,7 +47,7 @@ export default function HomeHero() {
               <p className="text-uppercase mb-0">starting from <span>$2999.99</span></p>
               <div className="pt-3">
                 <a href="" className="btn-custom-2 me-3">Learn more</a>
-                <a href="" className="btn-custom-1">Add to cart</a>
+                <a href="#" onClick={add} className="btn-custom-1">Add to cart</a>
               </div>
           </div>
 

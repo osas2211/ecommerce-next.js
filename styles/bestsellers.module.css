@@ -55,5 +55,11 @@
 @media (max-width: 700px) {
     .best_sellers_products{
         grid-template-columns: repeat(2, 1fr);
+        gap: 0.7rem;
+        justify-content: stretch;
+        align-items: stretch;
+    }
+    .best_sellers{
+        padding: 4rem 0.7rem;
     }
 }
