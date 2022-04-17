@@ -20,6 +20,7 @@ export const reducer = (initState, action)=>{
         // if product ID does'nt exist, 
         // the product is added to the initState.products array.
         if (IDs.indexOf(action.payload.id) < 0){
+            console.log(initState.products.map((a)=> a.amount));
             return {...initState,
                 products: [...initState.products, {
                     title: action.payload.title, 
@@ -28,23 +29,26 @@ export const reducer = (initState, action)=>{
                     id: action.payload.id,
                     count: action.payload.product_count
                 }],
-                counter: initState.counter + Number(action.payload.count)};
+                counter: Number(initState.counter) + Number(action.payload.count),
+                total_amount: Number(initState.total_amount) + Number(action.payload.amount)
+            
+            };
         }
+        
 
         // if the product ID already exists in state, 
         // the specific product count is incremented only.
-        else{
+        else {
+            
             return {
                 ...initState, 
-                product: initState.products.map(product => {
-                    if (product.id == action.payload.id){
-                        product.count = product.count + 0.5
-                        return 
-                    }
-                }),
                 counter: initState.counter + 1,
+                total_amount: Number(initState.total_amount) + Number(action.payload.amount),
+                products: initState.products.map(product=> ({ ...product, 
+                    count: product.id == action.payload.id ? product.count+1: product.count, 
+                })),
             }
-        }
+        };
            
 
 
@@ -56,7 +60,8 @@ export const reducer = (initState, action)=>{
                     }
                 })
             ],
-            counter: initState.counter - Number(action.payload.count)
+            counter: initState.counter - Number(action.payload.count),
+            total_amount: initState.total_amount - (Number(action.payload.count) * Number(action.payload.amount))
         }
     }
 }
@@ -64,7 +69,8 @@ export const reducer = (initState, action)=>{
 export const CartProvider = ({children})=>{
     const initialState = {
         products: [],
-        counter: 0
+        counter: 0,
+        total_amount: 0
     }
     const [state, dispatch] = useReducer(reducer, initialState)
 

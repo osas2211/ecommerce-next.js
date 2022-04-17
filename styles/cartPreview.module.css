@@ -9,7 +9,7 @@
     box-shadow: 2px 4px 11px rgb(121, 118, 118);
     animation-name: slideRight;
     animation-duration: .4s;
-    overflow-y: scroll;
+    
 }
 
 .header{
@@ -28,6 +28,17 @@
 .header a{
     cursor: pointer;
     font-weight: bold;
+}
+
+.body{
+    position: relative;
+    height: 90%;
+    width: 100%;
+}
+
+.products{
+    height: 70%;
+    overflow-y: scroll;
 }
 
 .empty{
@@ -72,6 +83,15 @@
 .delete{
     font-weight: bold;
     cursor: pointer;
+}
+
+.summary{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: #fff;
 }
 @keyframes slideRight {
     from{

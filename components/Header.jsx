@@ -38,7 +38,7 @@ export default function Header() {
               <span>{cart.counter}</span>
             </li>
             <li className='me-4'><a><FontAwesomeIcon icon={faSearch}/></a></li>
-            <li className='fw-bold'>$528.09</li>
+            <li className='fw-bold'>${cart.total_amount}</li>
             
         </ul>
       </div>

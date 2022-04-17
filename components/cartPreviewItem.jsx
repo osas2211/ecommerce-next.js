@@ -7,7 +7,7 @@ import { actions } from '../context/CartContext'
 export default function CartPreviewItem({product}) {
     const [,dispatch ] = useCart()
     const del = ()=>{
-        dispatch({type: actions.DELETE_ITEM, payload: {id: product.id, count:product.count}})
+        dispatch({type: actions.DELETE_ITEM, payload: {id: product.id, count:product.count, amount:product.amount}})
     }
   return (
     <div>

@@ -29,13 +29,26 @@ export default function CartPreview({cartToggle}) {
                     :
                     <div className={styles.body}>
 
-                        {
-                            state.products.map((product, num)=>{
-                                return(
-                                    <CartPreviewItem key={product.id} product={product} count={product.count}/> 
-                                )
-                            })
-                        }
+                        <div className={styles.products}>
+                            {
+                                state.products.map((product, num)=>{
+                                    return(
+                                        <CartPreviewItem key={product.id} product={product} count={product.count}/> 
+                                    )
+                                })
+                            }
+                        </div>
+
+                        <div className={styles.summary}>
+                            <div className="d-flex justify-content-between align-items-center">
+                                <p className='text-capitalize'>cart subtotal: </p>
+                                <p className='fw-bold'>${state.total_amount}</p>
+                            </div>
+                            <div className='px-3'>
+                                <div><Link href={"/"}><a className='btn-custom-1 w-100 text-center mb-2'>view cart</a></Link></div>
+                                <div><Link href={"/"}><a className='btn-custom-2 w-100 text-center'>proceed to checkout</a></Link></div>
+                            </div>
+                        </div>
                     </div>
             }
             </div>, document.body
