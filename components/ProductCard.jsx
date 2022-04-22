@@ -27,7 +27,7 @@ export default function ProductCard({img, title, rating, progress, sold, amount,
         <Image src={img} alt="" layout='fill' />
       </div>
       <div className={styles.product_details}>
-        <p className={styles.title}>{title}</p>
+        <Link href={"/"}><a className={styles.title}>{title}</a></Link>
         <p className={styles.rating}>
           <Rating rating_value={rating} />
         </p>

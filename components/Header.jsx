@@ -23,10 +23,10 @@ export default function Header() {
       <Info />
       <div className='px-5 pt-3 text-capitalize bg-white d-md-flex d-none  justify-content-between align-items-center'>
       <ul className={styles.list}>
-            <li className='me-4'><a href="#">home</a></li>
-            <li className='me-4'><a href="#">services</a></li>
-            <li className='me-4'><a href="#">about</a></li>
-            <li><a href="#">contact</a></li>
+            <li className='me-4'><Link href={"/"}><a>home</a></Link></li>
+            <li className='me-4'><Link href={"/collections"}><a>collections</a></Link></li>
+            <li className='me-4'><Link href={"/about"}><a>about</a></Link></li>
+            <li><a href="https://osaretinfrank.me/" rel='noreferrer' target={"_blank"}>contact</a></li>
         </ul>
 
         <p className="logo">Eazy<span>Shop</span></p>

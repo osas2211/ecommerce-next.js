@@ -9,7 +9,7 @@ import HeroItem2 from './homeHeroItems/HeroItem2';
 export default function HomeHero() {
   return (
     <div>
-        <Carousel variant="dark" className="pb-5 mt-5 pt-5 px-3">
+        <Carousel variant="dark" className="pb-5 px-3">
         <Carousel.Item>
           <HeroItem1 img={product} id="hero-product-1" amount={1999.99} title={"Iphone 8"} styles={styles}/>
         </Carousel.Item>

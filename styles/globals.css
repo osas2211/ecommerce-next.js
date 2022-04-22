@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&family=Raleway:wght@400;500;800&family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 :root{
   --bg-color: #f3f5f6;
 }
@@ -6,8 +7,12 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family:"Raleway",-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family:"Rubik",-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.children{
+  margin-top: 5rem;
 }
 
 ::-webkit-scrollbar{

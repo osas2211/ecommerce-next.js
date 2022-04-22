@@ -1,4 +1,3 @@
-import styles from "../styles/Home.module.css"
 import HomeHero from "../components/HomeHero"
 import Featured from "../components/Featured_"
 import ChooseUs from "../components/ChooseUs"

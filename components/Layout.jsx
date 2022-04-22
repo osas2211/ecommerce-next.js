@@ -15,7 +15,9 @@ export default function Layout({ children }) {
         
         <main>
             <Header></Header>
-            { children }
+            <div className="children">
+              { children }
+            </div>
         </main>
     </>
   )
