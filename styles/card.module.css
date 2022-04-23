@@ -1,4 +1,4 @@
-.product{
+.product, .product_{
     background-color: #fff;
     padding: 1.5rem 1rem 1rem 1rem;
     border-radius: 20px;
@@ -11,7 +11,12 @@
     position: relative;
 }
 
-.product::after{
+.product_{
+    border-radius: 0;
+    border: 1px solid rgba(156, 156, 156, 0.404);
+}
+
+.product::after, .product_::after{
     position: absolute;
     content: "";
     bottom: 0;
@@ -22,7 +27,7 @@
     transition: .5s;
 }
 
-.product:hover::after{
+.product:hover::after, .product_:hover::after{
     height: 100%;
 }
 
@@ -37,12 +42,13 @@
 .title{
     margin-top: 1rem;
     margin-bottom: 0;
+    width: 100%;
     font-size: 0.9rem;
     color: var(--bs-primary);
     font-weight: bold;
     text-transform: capitalize;
-    z-index: 500;
-    cursor: pointer;
+    z-index: 2;
+    position: relative;
 }
 
 .rating{
@@ -72,6 +78,10 @@
     transition: all .35s;
     animation-name: moveUp;
     animation-duration: .5s;
+    cursor: pointer;
+}
+
+.product_ a{
     cursor: pointer;
 }
 
@@ -107,7 +117,7 @@
     transform: translate(-44%, -55%);
 }
 
-.product:hover .heart{
+.product:hover .heart, .product_:hover .heart{
     display: block;
 }
 

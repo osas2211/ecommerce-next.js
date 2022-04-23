@@ -15,6 +15,11 @@ body {
   margin-top: 5rem;
 }
 
+.wrapper{
+  width: 95%;
+  margin: auto;
+}
+
 ::-webkit-scrollbar{
   width: .4rem;
   
@@ -103,9 +108,74 @@ a {
   top: 50%;
 }
 
+.shop{
+  background-color: var(--bg-color);
+}
+
+
+
+.filter_width{
+  width: 15rem;
+}
+
+.filter-icon svg{
+  width: 1.5rem;
+  transform: translate(120%, 50%);
+  color: #f3f5f6;
+}
+
+.filter-icon{
+  position: fixed;
+  top: 15rem;
+  left: 0rem;
+  height: 3rem;
+  width: 5rem;
+  background-color: var(--bs-dark);
+  z-index: 20;
+  cursor: pointer;
+  box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.256);
+}
+
+.close-icon{
+  position: relative;
+  transform: translate(80%, 0%);
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+
+.close-icon svg{
+  width: 1.5rem;
+
+}
+
+@media (max-width: 770px){
+
+  .filter{
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    background-color: #f3f5f6;
+    z-index: 10;
+    transform: translatex(-110%);
+  }
+
+  .filter-active{
+    transition: .5s;
+    transform: translate(0);
+  }
+}
+
 
 @media (max-width: 900px) {
   .img, .img2{
+    width: 100%;
+  }
+
+  
+
+
+  .w-full{
     width: 100%;
   }
 

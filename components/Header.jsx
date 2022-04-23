@@ -33,11 +33,11 @@ export default function Header() {
 
         <ul className={styles.list}>
             <li className='me-4 fw-bold'>USD</li>
+            <li className='me-4'><a><FontAwesomeIcon icon={faSearch}/></a></li>
             <li className='me-4'><a><FontAwesomeIcon icon={faSignIn}/></a></li>
             <li className={styles.cart + ' me-4'} onClick={cartToggleShow}><a><FontAwesomeIcon icon={faCartShopping}/></a>
               <span>{cart.counter}</span>
             </li>
-            <li className='me-4'><a><FontAwesomeIcon icon={faSearch}/></a></li>
             <li className='fw-bold'>${cart.total_amount}</li>
             
         </ul>
