@@ -7,7 +7,7 @@ import { faFilter } from '@fortawesome/free-solid-svg-icons'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default function Watches() {
+export default function WatchesPage() {
   const [options, setOptions ] = React.useState(false)
   const toggleOptions = ()=>{
     options ? setOptions(false) : setOptions(true)

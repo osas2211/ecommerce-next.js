@@ -7,7 +7,7 @@ import { faFilter } from '@fortawesome/free-solid-svg-icons'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default function PhonesPage() {
+export default function GadgetsPage() {
   const [options, setOptions ] = React.useState(false)
   const toggleOptions = ()=>{
     options ? setOptions(false) : setOptions(true)
