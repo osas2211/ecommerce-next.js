@@ -4,7 +4,6 @@ export const cartReducer = (initState, action)=>{
     switch(action.type){
         case actions.ADD_TO_CART: 
         const IDs = initState.products.map(product => product.id)
-        
         // Checks if Product ID already exists using the "indexOf()" method,
         // if product ID does'nt exist, 
         // the product is added to the initState.products array.
