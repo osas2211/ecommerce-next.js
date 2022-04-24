@@ -2,15 +2,16 @@ import "../styles/bootstrap.css"
 import '../styles/globals.css'
 import '../styles/btn.css'
 import Layout from '../components/Layout'
-import { CartProvider } from "../context/CartContext"
+import { store } from "../redux/store/store"
+import { Provider } from "react-redux"
 
 function MyApp({ Component, pageProps }) {
   return (
-    <CartProvider>
+    <Provider store={store}>
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </CartProvider>
+    </Provider>
   )
 }
 

@@ -158,11 +158,14 @@ a {
     background-color: #f3f5f6;
     z-index: 10;
     transform: translatex(-110%);
+    overflow-y: scroll;
+    height: 100vh;
   }
 
   .filter-active{
     transition: .5s;
     transform: translate(0);
+    overflow-y: scroll;
   }
 }
 

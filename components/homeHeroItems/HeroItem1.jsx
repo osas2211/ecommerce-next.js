@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import { useCart, actions } from '../../context/CartContext'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../redux/stateSlices/cartSlice'
 
 export default function HeroItem1({img, title, rating, progress, sold, amount, id, count, styles}) {
     const payload_data = {
@@ -11,9 +12,9 @@ export default function HeroItem1({img, title, rating, progress, sold, amount, i
         id: id,
         product_count: 1
       }
-    const [state, dispatch] = useCart()
+    const dispatch = useDispatch()
     const add = ()=>{
-        dispatch({type: actions.ADD_TO_CART, payload: payload_data})
+        dispatch({type: addToCart, payload: payload_data})
       }
   return (
     <>

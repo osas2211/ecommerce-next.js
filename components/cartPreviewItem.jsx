@@ -1,13 +1,13 @@
 import React from 'react'
 import styles from "../styles/cartPreview.module.css"
 import Image from "next/image"
-import { useCart } from '../context/CartContext'
-import { actions } from '../context/CartContext'
+import { useDispatch } from 'react-redux'
+import { removeFromCart } from '../redux/stateSlices/cartSlice'
 
 export default function CartPreviewItem({product}) {
-    const [,dispatch ] = useCart()
+    const dispatch = useDispatch()
     const del = ()=>{
-        dispatch({type: actions.DELETE_ITEM, payload: {id: product.id, count:product.count, amount:product.amount}})
+        dispatch({type: removeFromCart, payload: {id: product.id, count:product.count, amount:product.amount}})
     }
   return (
     <div>

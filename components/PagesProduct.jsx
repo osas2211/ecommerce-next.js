@@ -6,10 +6,11 @@ import Rating from './Rating'
 import Link from 'next/link'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useCart, actions } from '../context/CartContext'
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../redux/stateSlices/cartSlice'
 
 export default function ProductCard({img, title, rating, progress, amount, id, count}) {
-  const [cart,dispatch] = useCart()
+  const dispatch = useDispatch()
   const payload_data = {
     count: 1,
     title: title,
@@ -19,7 +20,7 @@ export default function ProductCard({img, title, rating, progress, amount, id, c
     product_count: 1
   }
   const add = ()=>{
-    dispatch({type: actions.ADD_TO_CART, payload:payload_data})
+    dispatch({type: addToCart, payload:payload_data})
   }
   return (
     <div className={styles.product_}>

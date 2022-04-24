@@ -7,8 +7,8 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { faSignIn } from '@fortawesome/free-solid-svg-icons'
 import Info from './Info'
-import { useCart } from '../context/CartContext'
 import CartPreview from './CartPreview'
+import { useSelector } from 'react-redux'
 
 
 
@@ -17,7 +17,7 @@ export default function Header() {
   const cartToggleShow = (e)=>{
     cartVisibility ? setCartVisibility(false): setCartVisibility(true)
   }
-  const [cart,] = useCart()
+  const cart = useSelector(state=> state.cart)
   return (
     <section className={styles.main_header + ' '}>
       <Info />

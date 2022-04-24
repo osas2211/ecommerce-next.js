@@ -5,12 +5,11 @@ import { faXmarkCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from "next/link"
 import Image from "next/image"
-import { useCart } from '../context/CartContext'
-import { actions } from '../context/CartContext'
 import CartPreviewItem from './cartPreviewItem'
+import { useSelector } from 'react-redux'
 
 export default function CartPreview({cartToggle}) {
-    const [state,dispatch ] = useCart()
+    const state = useSelector(state=> state.cart)
     
     if (document.body){
         return reactDom.createPortal(
