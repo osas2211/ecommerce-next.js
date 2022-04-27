@@ -17,12 +17,12 @@ export function Login() {
         <Form>
             <div className='mb-3'>
                 <Form.Label>Email <span className='text-danger'>*</span></Form.Label>
-                <Form.Control></Form.Control>
+                <Form.Control required></Form.Control>
             </div>
 
             <div className='mb-3'>
                 <Form.Label>Password <span className='text-danger'>*</span></Form.Label>
-                <Form.Control type={showPassword ? 'text' : "password"}></Form.Control>
+                <Form.Control type={showPassword ? 'text' : "password"} required></Form.Control>
             </div>
             <div className='d-flex justify-content-between text-sm'>
                 <div className={ styles.showPassword +' d-flex'}>

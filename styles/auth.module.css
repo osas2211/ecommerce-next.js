@@ -23,6 +23,14 @@
 .login_createNew{
     width: 45%
 }
+.info{
+    display: flex;
+    margin-bottom: 5rem;
+}
+
+.info svg{
+    width: 1.5rem;
+}
 
 @media (max-width: 991px) {
     .login_form, .login_createNew{

@@ -26,6 +26,11 @@ a{
   margin: auto;
 }
 
+.wrapper2{
+  width: 55%;
+  margin: auto;
+}
+
 ::-webkit-scrollbar{
   width: .4rem;
   
@@ -157,6 +162,9 @@ a {
 
 @media (max-width: 770px){
 
+  .wrapper2{
+    width: 90%;
+  }
   .filter{
     position: fixed;
     top: 5rem;
