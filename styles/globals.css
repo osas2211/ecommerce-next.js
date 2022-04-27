@@ -11,6 +11,10 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+a{
+  text-decoration: none;
+}
+
 .children{
   margin-top: 5rem;
 }

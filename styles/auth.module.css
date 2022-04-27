@@ -1,0 +1,31 @@
+.showPassword span{
+    cursor: pointer;
+}
+
+.login{
+    position: relative;
+}
+
+.login_form{
+    width: 45%;
+    margin-bottom: 5rem;
+}
+
+.login .line{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 1px;
+    background-color: rgb(221, 221, 221);
+}
+
+.login_createNew{
+    width: 45%
+}
+
+@media (max-width: 991px) {
+    .login_form, .login_createNew{
+        width: 100%;
+    }
+}

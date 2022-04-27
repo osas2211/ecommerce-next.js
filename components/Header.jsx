@@ -34,7 +34,7 @@ export default function Header() {
         <ul className={styles.list}>
             <li className='me-4 fw-bold'>USD</li>
             <li className='me-4'><a><FontAwesomeIcon icon={faSearch}/></a></li>
-            <li className='me-4'><a><FontAwesomeIcon icon={faSignIn}/></a></li>
+            <li className='me-4'><Link href={"/customer/account/login"}><a><FontAwesomeIcon icon={faSignIn}/></a></Link></li>
             <li className={styles.cart + ' me-4'} onClick={cartToggleShow}><a><FontAwesomeIcon icon={faCartShopping}/></a>
               <span>{cart.counter}</span>
             </li>
