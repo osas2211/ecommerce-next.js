@@ -23,7 +23,7 @@ export default function CartPreview({cartToggle}) {
                     <div className={styles.empty}>
                         <span className={styles.empty_cart}><FontAwesomeIcon icon={faXmarkCircle} /></span>
                         <p className='text-center text-capitalize mt-4'>Your cart is empty</p>
-                        <Link href="/"><a className='btn-custom-1'>Return To Shop</a></Link>
+                        <Link href="/collections"><a className='btn-custom-1' onClick={cartToggle}>Return To Shop</a></Link>
                     </div>
                     :
                     <div className={styles.body}>
