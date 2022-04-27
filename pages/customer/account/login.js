@@ -17,7 +17,7 @@ export default function Login() {
                 <p>Create your EazyShop customer account in just a few clicks! You can register either using your e-mail address or through your Facebook account.</p>
 
                 <div>
-                  <Link href={"/customer/account/signup"}><a><Button size='lg' className='w-100 mt-5 text-light text-uppercase'>Create an account</Button></a></Link>
+                  <Link href={"/customer/account/signup"}><a><Button size='lg' className='w-100 my-5 text-light text-uppercase'>Create an account</Button></a></Link>
                 </div>
 
               </div>
