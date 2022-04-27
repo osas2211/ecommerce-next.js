@@ -7,11 +7,11 @@ import Link from "next/link"
 
 export default function ResetPassword() {
   return (
-    <div className='wrapper2 mt-5 px-5'>
+    <div className='wrapper2 mt-5 px-3 px-md-5'>
         <p className='text-primary fw-bold h4 mb-4'>Password Assistance</p>
         <div className={styles.info}>
             <div className='text-primary me-4'><FontAwesomeIcon icon={faInfoCircle}/></div>
-            <p>Please enter the e-mail address associated with your EazyShop account. We will send you a link to this e-mail address to reset your password.</p>
+            <p>Please enter the e-mail address associated with your EazyShop account. A link will be sent to this e-mail address to reset your password.</p>
         </div>
         <Form>
             <Form.Label>Email <span className='text-danger'>*</span></Form.Label>

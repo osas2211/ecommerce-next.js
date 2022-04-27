@@ -35,6 +35,9 @@ export function Login() {
             </div>
             <div className='mt-4'><Button type='submit' size='lg' className='text-light text-uppercase w-100'>Login</Button></div>
         </Form>
+        <div className='mt-3 text-center d-md-none'>
+            <Link href={"/customer/account/signup"}><a className='text-capitalize text-primary'>Create Account</a></Link>
+        </div>
     </div>
   )
 }
