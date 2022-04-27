@@ -190,4 +190,20 @@
     .four{
         display: none;
     }
+    .hero_img{
+        height: 25rem;
+    }
+
+    .hero_img span span{
+        display: none !important;
+    }
+
+    .hero_img span{
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .hero_img span img{
+        min-width: 100%;
+    }
 }

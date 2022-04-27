@@ -10,7 +10,7 @@ export function Login() {
     }
 
   return (
-    <div className={ styles.login_form + ' px-3'}>
+    <div className={ styles.login_form + ' px-0 px-md-3'}>
         <p className='text-center text-uppercase text-primary fw-bold'>Login</p>
         <h5>Registered Customers</h5>
         <p>If you have an account, sign in with your email address.</p>
@@ -24,7 +24,7 @@ export function Login() {
                 <Form.Label>Password <span className='text-danger'>*</span></Form.Label>
                 <Form.Control type={showPassword ? 'text' : "password"}></Form.Control>
             </div>
-            <div className='d-flex justify-content-between'>
+            <div className='d-flex justify-content-between text-sm'>
                 <div className={ styles.showPassword +' d-flex'}>
                     <Form.Check onClick={handlePasswordVisibitly} checked={showPassword}></Form.Check>
                     <span className='ms-1' onClick={handlePasswordVisibitly}>show password</span>

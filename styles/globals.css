@@ -15,6 +15,8 @@ a{
   text-decoration: none;
 }
 
+
+
 .children{
   margin-top: 5rem;
 }
@@ -188,5 +190,15 @@ a {
 
   .carousel-control-prev-icon, .carousel-control-next-icon{
     display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .text-sm{
+    font-size: 0.8rem;
+  }
+
+  .img{
+    height: 20rem;
   }
 }
