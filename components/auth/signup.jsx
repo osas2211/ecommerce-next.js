@@ -16,18 +16,18 @@ export function SignUp() {
             <div className='d-block d-md-flex justify-content-between'>
                 <div className='mb-3 w-100'>
                     <Form.Label>First Name <span className='text-danger'>*</span></Form.Label>
-                    <Form.Control required></Form.Control>
+                    <Form.Control name='first_name' required></Form.Control>
                 </div>
 
                 <div className='mb-3 ms-0 ms-md-5 w-100'>
                     <Form.Label>Last Name <span className='text-danger'>*</span></Form.Label>
-                    <Form.Control required></Form.Control>
+                    <Form.Control name='last_name' required></Form.Control>
                 </div>
             </div>
             <div className='d-block d-md-flex justify-content-between'>
                 <div className='mb-3 w-100'>
                     <Form.Label>Email <span className='text-danger'>*</span></Form.Label>
-                    <Form.Control required></Form.Control>
+                    <Form.Control type='email' required></Form.Control>
                 </div>
 
                 <div className='mb-3 ms-0 ms-md-5 w-100'>

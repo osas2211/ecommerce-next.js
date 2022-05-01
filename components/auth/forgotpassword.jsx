@@ -19,7 +19,7 @@ export default function ResetPassword() {
             <Button className='w-100 mt-3 text-light' type='submit' size='lg'>Reset password</Button>
         </Form>
         <div className='text-center'>
-            <Link href={"/customer/account/login"}><a><Button variant='outline-primary' className='text-center mt-3' type='submit'>Login</Button></a></Link>
+            <Link href={"/customer/account/login"}><a className={ styles.info + ' rounded p-2 text-center mt-3 d-inline-block text-primary'}>Return To Login</a></Link>
         </div>
     </div>
   )

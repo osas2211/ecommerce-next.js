@@ -35,7 +35,7 @@ export default function Header() {
         <ul className={styles.list}>
             <li className='me-4 fw-bold'>USD</li>
             <li className='me-4'><a><FontAwesomeIcon icon={faSearch}/></a></li>
-            <li className='me-4'><Link href={"/customer/account/login"}><a><FontAwesomeIcon icon={faSignIn}/></a></Link></li>
+            <li className='me-4'><Link href={"/customer/account/login"}><a className='d-inline-block bg-dark text-light px-1 border border-2 rounded'><FontAwesomeIcon icon={faSignIn}/><span className='ps-1'>Login</span></a></Link></li>
             <li className={styles.cart + ' me-4'} onClick={cartToggleShow}><a><FontAwesomeIcon icon={faCartShopping}/></a>
               <span>{cart.counter}</span>
             </li>
@@ -61,8 +61,8 @@ export default function Header() {
             <Nav.Link className='mb-2'><a href="https://osaretinfrank.me/" rel='noreferrer' target={"_blank"}>contact</a></Nav.Link>
             <Nav.Link className='mb-2'><a>Search Products</a></Nav.Link>
             <Nav.Link className='mb-2'><Link href={"/customer/account/login"}><a>Login</a></Link></Nav.Link>
-            <Nav.Link className={styles.cart + ' me-4 mb-4'} onClick={cartToggleShow}><a>Preview Cart</a>
-              <span className='mt-2'>{cart.counter}</span>
+            <Nav.Link className={styles.cart + ' me-4 mb-4 fw-bold'} onClick={cartToggleShow}><a>Preview Cart</a>
+              <span className='mt-2 bg-primary'>{cart.counter}</span>
             </Nav.Link>
             <p className='fw-bold mb-5'>${cart.total_amount}</p>
         </Nav>

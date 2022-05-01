@@ -17,7 +17,7 @@ export function Login() {
         <Form>
             <div className='mb-3'>
                 <Form.Label>Email <span className='text-danger'>*</span></Form.Label>
-                <Form.Control required></Form.Control>
+                <Form.Control required type='email'></Form.Control>
             </div>
 
             <div className='mb-3'>
