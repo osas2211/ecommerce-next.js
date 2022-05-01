@@ -17,13 +17,13 @@ export default function PagesProductSection() {
 
   return (
     <div className='row g-4 justify-content-center justify-content-md-start'>
-      <div className='col-10 col-md-6 col-lg-3'><ProductCard img={phone4} title={"Phones Catalog"} amount={700} rating={4}/></div>
-      <div className='col-10 col-md-6 col-lg-3'><ProductCard img={phone4} title={"Phones Catalog"} amount={700} rating={4}/></div>
-      <div className='col-10 col-md-6 col-lg-3'><ProductCard img={phone4} title={"Phones Catalog"} amount={700} rating={4}/></div>
-      <div className='col-10 col-md-6 col-lg-3'><ProductCard img={phone4} title={"Phones Catalog"} amount={700} rating={4}/></div>
-      <div className='col-10 col-md-6 col-lg-3'><ProductCard img={phone4} title={"Phones Catalog"} amount={700} rating={4}/></div>
-      <div className='col-10 col-md-6 col-lg-3'><ProductCard img={phone4} title={"Phones Catalog"} amount={700} rating={4}/></div>
-      <div className='col-10 col-md-6 col-lg-3'><ProductCard img={phone4} title={"Phones Catalog"} amount={700} rating={4}/></div>
+      <div className='col-6 col-md-6 col-lg-3'><ProductCard img={phone4} title={"Phones Catalog"} amount={700} rating={4}/></div>
+      <div className='col-6 col-md-6 col-lg-3'><ProductCard img={phone4} title={"Phones Catalog"} amount={700} rating={4}/></div>
+      <div className='col-6 col-md-6 col-lg-3'><ProductCard img={phone4} title={"Phones Catalog"} amount={700} rating={4}/></div>
+      <div className='col-6 col-md-6 col-lg-3'><ProductCard img={phone4} title={"Phones Catalog"} amount={700} rating={4}/></div>
+      <div className='col-6 col-md-6 col-lg-3'><ProductCard img={phone4} title={"Phones Catalog"} amount={700} rating={4}/></div>
+      <div className='col-6 col-md-6 col-lg-3'><ProductCard img={phone4} title={"Phones Catalog"} amount={700} rating={4}/></div>
+      <div className='col-6 col-md-6 col-lg-3'><ProductCard img={phone4} title={"Phones Catalog"} amount={700} rating={4}/></div>
       {/* {
         state.map(product => (
           <div key={product.id} className='col-10 col-md-6 col-lg-3'><ProductCard img={product.image} id={product.id + "test"} title={product.title} amount={product.price} rating={product.rating.rate}/></div>

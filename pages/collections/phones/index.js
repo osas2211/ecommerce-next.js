@@ -17,7 +17,7 @@ export default function PhonesPage() {
       <Head>
         <title>Phones - EazyShop</title>
       </Head>
-      <div className='py-5 shop'>
+      <div className=' shop'>
         <div className='wrapper'>
           {!options &&  <div className='filter-icon d-block d-md-none' onClick={toggleOptions}><FontAwesomeIcon icon={faFilter}/></div>}
           <p className='mt-3 d-none d-md-block'>Shopping Options</p>

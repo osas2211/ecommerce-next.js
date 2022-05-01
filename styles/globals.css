@@ -121,6 +121,7 @@ a {
 
 .shop{
   background-color: var(--bg-color);
+  padding-top: 5rem;
 }
 
 
@@ -198,6 +199,10 @@ a {
 
   .carousel-control-prev-icon, .carousel-control-next-icon{
     display: none;
+  }
+
+  .shop{
+    padding-top: 8rem;
   }
 }
 
