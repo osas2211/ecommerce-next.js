@@ -5,6 +5,7 @@
     left: 0;
     width: 100%;
     z-index: 100;
+    box-shadow: 3px 4px 15px rgba(75, 75, 75, 0.12);
 }
 
 .list{

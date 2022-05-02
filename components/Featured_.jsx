@@ -7,7 +7,7 @@ import img2 from "../images/product-130.jpg"
 import img3 from "../images/product-125.jpg"
 import img4 from "../images/product-7.jpg"
 import Link from 'next/link'
-import ProductCardSmall from './ProductCardSmall'
+import ProductCardSmall from './product/ProductCardSmall'
 
 export default function Featured() {
   return (

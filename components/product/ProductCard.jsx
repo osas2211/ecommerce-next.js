@@ -1,13 +1,13 @@
 import React from 'react'
 //import styles from "../styles/product.module.css"
-import styles from "../styles/card.module.css"
+import styles from "../../styles/card.module.css"
 import Image from "next/image"
-import Rating from './Rating'
+import Rating from '../Rating'
 import Link from 'next/link'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDispatch } from 'react-redux'
-import { addToCart } from '../redux/stateSlices/cartSlice'
+import { addToCart } from '../../redux/stateSlices/cartSlice'
 
 export default function ProductCard({img, title, rating, progress, sold, amount, id, count}) {
   const dispatch = useDispatch()
@@ -28,7 +28,7 @@ export default function ProductCard({img, title, rating, progress, sold, amount,
         <Image src={img} alt="" layout='fill' />
       </div>
       <div className={styles.product_details}>
-        <Link href={"/"}><a className={styles.title}>{title}</a></Link>
+        <Link href={"/collections/gadgets/products"}><a className={styles.title}>{title}</a></Link>
         <p className={styles.rating}>
           <Rating rating_value={rating} />
         </p>

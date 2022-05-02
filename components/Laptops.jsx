@@ -1,4 +1,4 @@
-import ProductCard from "./ProductCard";
+import ProductCard from "./product/ProductCard";
 import { products } from "../dummyData/products";
 import { useState } from "react";
 
