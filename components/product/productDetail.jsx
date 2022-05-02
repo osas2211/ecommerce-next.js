@@ -1,12 +1,13 @@
 import React from 'react'
 import styles from "../../styles/product_detail.module.css"
 import { Container, Button } from 'react-bootstrap'
-import phone from "../../images/71Erq-PlhhL._AC_SX522_.jpg"
 import phone1 from "../../images/iphone12-max.png"
 import Rating from '../Rating'
 import Image from "next/image"
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../redux/stateSlices/cartSlice'
 
 export default function ProductDetail() {
     const [countState, setCountState] = React.useState(()=> 0);
@@ -15,6 +16,22 @@ export default function ProductDetail() {
     }
     const decreaseCount = ()=>{
         setCountState((prevState)=> prevState > 0 ? prevState-1 : prevState)
+    }
+
+    const payload_data = {
+        count: countState,
+        title: "Zmmyr 200Pcs Dust Flat Mouth",
+        image: phone1,
+        amount: 900,
+        id: "countState",
+        product_count: countState
+      }
+
+    const dispatch = useDispatch()
+    const handleAddToCart = (e)=>{
+        e.preventDefault()
+        countState > 0 &&  dispatch({type: addToCart, payload: payload_data})
+        setCountState(0) 
     }
   return (
     <div className={styles.product}>
@@ -39,14 +56,14 @@ export default function ProductDetail() {
                             {countState} 
                             <span className='text-dark ms-3 h4 bg-warning py-1 px-3 fw-bold' onClick={increaseCount}>+</span>
                         </p>
-                        <a href='' className='btn btn-primary text-light text-uppercase w-75 text-center ms-4'>add to cart</a>
+                        <a onClick={handleAddToCart} href='' className='btn btn-primary text-light text-uppercase w-75 text-center ms-4'>add to cart</a>
                     </div>
 
                     <div className={styles.wishlist}>
                         <small className='text-capitalize'><span><FontAwesomeIcon icon={faHeart}/></span> add to wish list</small>
                     </div>
                     <div className={styles.hr + " my-4"}></div>
-                    <p>Categories: <small className='text-muted'>Phones</small></p>
+                    <p>Categories: <small className='text-muted'>Phones, Iphone</small></p>
                 </div>
             </div>
         </Container>

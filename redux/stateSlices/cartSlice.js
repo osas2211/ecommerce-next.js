@@ -25,7 +25,7 @@ export const cartSlice = createSlice({
                         count: action.payload.product_count
                     }],
                     counter: Number(state.counter) + Number(action.payload.count),
-                    total_amount: Number(state.total_amount) + Number(action.payload.amount)
+                    total_amount: Number(state.total_amount) + Number(action.payload.amount * action.payload.product_count)
                 
                 };
             }
@@ -36,10 +36,10 @@ export const cartSlice = createSlice({
                 
                 return {
                     ...state, 
-                    counter: state.counter + 1,
-                    total_amount: Number(state.total_amount) + Number(action.payload.amount),
+                    counter: state.counter + action.payload.product_count,
+                    total_amount: Number(state.total_amount) + Number(action.payload.amount * action.payload.product_count),
                     products: state.products.map(product=> ({ ...product, 
-                        count: product.id == action.payload.id ? product.count+1: product.count, 
+                        count: product.id == action.payload.id ? product.count + action.payload.product_count: product.count, 
                     })),
                 }
             };
