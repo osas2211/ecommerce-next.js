@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 export default function AccountNav() {
   return (
-    <div className={styles.nav + " rounded"}>
+    <div className={styles.nav + " rounded mx-auto mx-md-0"}>
         <Card>
             <Card.Header className='border-0'>
                 <Link href={"/customer/account/dashboard"}>

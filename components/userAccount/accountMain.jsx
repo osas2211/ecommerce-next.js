@@ -9,8 +9,8 @@ export default function AccountMain() {
     <div className={styles.main + " rounded-3"}>
       <header className='h5 px-3 pt-3'>Account Overview</header>
       <div className={styles.hr}></div>
-      <div className='g-0 px-5 row justify-content-center justify-content-md-between'>
-        <div className='col-md-5 col-11 my-4 border border-1'>
+      <div className='g-0 px-4 px-md-5 row justify-content-center justify-content-md-between'>
+        <div className='col-md-5 col-12 my-4 border border-1'>
           <header className='d-flex justify-content-between align-items-center p-3'>
             <p className='text-uppercase m-0'>Account Overview</p>
             <Link href={"/"}><a className='pe-2 text-primary'><FontAwesomeIcon icon={faPencil}/></a></Link>
@@ -23,7 +23,7 @@ export default function AccountMain() {
           </div>
         </div>
 
-        <div className='col-md-5 col-11 border border-1 my-4'>
+        <div className='col-md-5 col-12 border border-1 my-4'>
           <header className='d-flex justify-content-between align-items-center p-3'>
             <p className='text-uppercase m-0'>Address book</p>
             <Link href={"/"}><a className='pe-2 text-primary'><FontAwesomeIcon icon={faPencil}/></a></Link>
@@ -38,7 +38,7 @@ export default function AccountMain() {
           </div>
         </div>
 
-        <div className='col-md-5 col-11 border border-1 mb-4'>
+        <div className='col-md-5 col-12 border border-1 mb-4'>
           <header className='d-flex justify-content-between align-items-center p-3'>
             <p className='text-uppercase m-0'>EazyShop Prime</p>
           </header>
@@ -50,7 +50,7 @@ export default function AccountMain() {
           </div>
         </div>
 
-        <div className='col-md-5 col-11 border border-1 mb-4'>
+        <div className='col-md-5 col-12 border border-1 mb-4'>
           <header className='d-flex justify-content-between align-items-center p-3'>
             <p className='text-uppercase m-0'>EazyShop store Credit</p>
           </header>
