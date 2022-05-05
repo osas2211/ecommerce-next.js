@@ -5,6 +5,8 @@ import styles from "../../styles/cart.module.css"
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
+import { useDispatch } from 'react-redux'
+import { removeFromCart } from '../../redux/stateSlices/cartSlice'
 
 export default function CartCard({title, amount, count, image, id }) {
     const [countState, setCountState] = React.useState(()=> count);
@@ -13,6 +15,11 @@ export default function CartCard({title, amount, count, image, id }) {
     }
     const decreaseCount = ()=>{
         setCountState((prevState)=> prevState > 0 ? prevState-1 : prevState)
+    }
+
+    const dispatch = useDispatch()
+    const del = ()=>{
+        dispatch({type: removeFromCart, payload: {id: id, count:count, amount:amount}})
     }
   return (
     <>
@@ -43,7 +50,7 @@ export default function CartCard({title, amount, count, image, id }) {
             </a>
         </Link>
         <div className='p-3 d-flex align-items-center justify-content-between'>
-            <span className='text-primary'><FontAwesomeIcon icon={faTrash}/> <small>REMOVE</small></span>
+            <span className='text-primary' onClick={del} style={{cursor: "pointer"}}><FontAwesomeIcon icon={faTrash}/> <small>REMOVE</small></span>
             <div className={styles.add + " "}>
                 <p className='bg-dark text-light d-inline-block m-0'>
                     <span className='text-dark me-3 h4 bg-warning py-1 px-3 fw-bold' onClick={decreaseCount}>-</span> 

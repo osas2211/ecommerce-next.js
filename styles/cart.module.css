@@ -17,8 +17,10 @@
 .cart_summary{
     background-color: #fff;
     border-radius: 10px;
-    min-height: 70vh;
+    padding-bottom: 1rem;
+    line-height: 1rem;
 }
+
 
 .hr{
     width: 100%;
