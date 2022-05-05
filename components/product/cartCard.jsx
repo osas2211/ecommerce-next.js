@@ -6,8 +6,8 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 
-export default function CartCard() {
-    const [countState, setCountState] = React.useState(()=> 0);
+export default function CartCard({title, amount, count, image, id }) {
+    const [countState, setCountState] = React.useState(()=> count);
     const increaseCount = ()=>{
         setCountState((prevState)=> prevState+1)
     }
@@ -21,10 +21,10 @@ export default function CartCard() {
                 <div className={styles.hr}></div>
                 <div className='p-3 d-flex  pb-1 justify-content-between'>
                     <div className={styles.img}>
-                        <Image src={phone1} alt="" layout='responsive' />
+                        <Image src={image} alt="" layout='responsive' />
                     </div>
                     <div className={styles.details + " w-75"}>
-                        <p className='m-0'>A80 Pro 4G Unlocked Cell Phones</p>
+                        <p className='m-0'>{title}</p>
                         <div>
                             <small className='text-muted'>Brand:</small>
                             <small className='ms-1'>Iphone</small>
@@ -37,7 +37,7 @@ export default function CartCard() {
                         </div>
                     </div>
                     <div>
-                        <p className='fw-bold'>$5000</p>
+                        <p className='fw-bold'>${amount}</p>
                     </div>
                 </div>
             </a>

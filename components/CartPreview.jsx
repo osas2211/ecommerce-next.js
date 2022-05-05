@@ -6,14 +6,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from "next/link"
 import Image from "next/image"
 import CartPreviewItem from './cartPreviewItem'
+import { Offcanvas } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 
-export default function CartPreview({cartToggle}) {
+export default function CartPreview({cartToggle, onHide}) {
     const state = useSelector(state=> state.cart)
     
-    if (document.body){
-        return reactDom.createPortal(
-            <div className={styles.cart}>
+        return (
+            <Offcanvas placement='end' onHide={onHide} show = {cartToggle} className={styles.cart}>
                 <div className={styles.header}>
                     <p className='fw-bold'>My Cart</p>
                     <a onClick={cartToggle}>&#10005;</a>
@@ -44,15 +44,14 @@ export default function CartPreview({cartToggle}) {
                                 <p className='fw-bold'>${state.total_amount}</p>
                             </div>
                             <div className='px-3'>
-                                <div><Link href={"/cart"}><a className='btn-custom-1 w-100 text-center mb-2'>view cart</a></Link></div>
-                                <div><Link href={"/"}><a className='btn-custom-2 w-100 text-center'>proceed to checkout</a></Link></div>
+                                <div><Link href={"/cart"}><a className='btn-custom-1 w-100 text-center mb-2' onClick={cartToggle}>view cart</a></Link></div>
+                                <div><Link href={"/"}><a className='btn-custom-2 w-100 text-center' onClick={cartToggle}>proceed to checkout</a></Link></div>
                             </div>
                         </div>
                     </div>
             }
-            </div>, document.body
+            </Offcanvas>
           ) 
-    }
-    document.body 
+    
   
 }

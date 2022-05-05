@@ -1,14 +1,7 @@
 .cart{
-    position: fixed;
-    z-index: 200;
-    top: 0;
-    right: 0;
     width: 22rem;
-    height: 100vh;
     background-color: #fff;
     box-shadow: 2px 4px 11px rgb(121, 118, 118);
-    animation-name: slideRight;
-    animation-duration: .4s;
     
 }
 

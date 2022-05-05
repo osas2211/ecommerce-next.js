@@ -44,7 +44,7 @@ export default function Header() {
         </ul>
       </div>
 
-    {cartVisibility && <CartPreview cartToggle={cartToggleShow}/>}
+    {cartVisibility && <CartPreview cartToggle={cartToggleShow} onHide={cartToggleShow}/>}
 
 
 
