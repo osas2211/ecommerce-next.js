@@ -121,7 +121,8 @@ a {
 
 .shop{
   background-color: var(--bg-color);
-  padding-top: 5rem;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
 }
 
 
@@ -165,6 +166,10 @@ a {
 
   .wrapper2{
     width: 90%;
+  }
+
+  .shop{
+    padding-top: 6rem !important;
   }
   .filter{
     position: fixed;

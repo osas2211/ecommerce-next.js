@@ -44,7 +44,7 @@ export default function CartPreview({cartToggle}) {
                                 <p className='fw-bold'>${state.total_amount}</p>
                             </div>
                             <div className='px-3'>
-                                <div><Link href={"/"}><a className='btn-custom-1 w-100 text-center mb-2'>view cart</a></Link></div>
+                                <div><Link href={"/cart"}><a className='btn-custom-1 w-100 text-center mb-2'>view cart</a></Link></div>
                                 <div><Link href={"/"}><a className='btn-custom-2 w-100 text-center'>proceed to checkout</a></Link></div>
                             </div>
                         </div>

@@ -23,7 +23,7 @@ export default function WatchesPage() {
           <p className='mt-3 d-none d-md-block'>Shopping Options</p>
           <div className='d-block d-md-flex justify-content-between'>
             <div className={options ? "filter me-5 filter-active" : "filter me-5"}>
-              <div className='close-icon d-md-none' onClick={toggleOptions}><FontAwesomeIcon icon={faTimes}/></div>
+              <div className='close-icon d-md-none mt-5' onClick={toggleOptions}><FontAwesomeIcon icon={faTimes}/></div>
               <FilterPrice />
               <FilterBrand brands={["hublot", "samsung", "xioami", "tecno", "infinix"]} />
             </div>
