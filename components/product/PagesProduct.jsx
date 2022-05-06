@@ -22,7 +22,7 @@ export default function ProductCard({img, title, rating, progress, amount, id, c
     dispatch({type: addToCart, payload:payload_data})
   }
   return (
-    <div className={styles.product_}>
+    <div className={styles.product_ + " rounded-3"}>
       <div className={styles.img}>
         <Image src={img} alt="" layout='fill' />
       </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import Head from "next/head";
 import Header from './Header';
 import Info from './Info';
+import Footer from './Footer';
 
 export default function Layout({ children }) {
   return (
@@ -18,6 +19,7 @@ export default function Layout({ children }) {
             <div className="children">
               { children }
             </div>
+            <Footer />
         </main>
     </>
   )

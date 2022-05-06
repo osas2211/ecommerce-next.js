@@ -15,8 +15,8 @@ export default function CartCard({title, amount, count, image, id }) {
         dispatch({type: addToCart, payload: {id: id, count: 1, product_count: 1, amount: amount}})
     }
     const decreaseCount = ()=>{
-        setCountState((prevState)=> prevState > 0 ? prevState-1 : prevState)
-        countState > 0 &&  dispatch({type: decreaseItemCount, payload: {id: id, count: 1, product_count: 1, amount: amount}})
+        setCountState((prevState)=> prevState > 1 ? prevState-1 : prevState)
+        countState > 1 &&  dispatch({type: decreaseItemCount, payload: {id: id, count: 1, product_count: 1, amount: amount}})
     }
 
     const dispatch = useDispatch()
