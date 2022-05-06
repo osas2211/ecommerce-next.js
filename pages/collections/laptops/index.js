@@ -8,7 +8,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const getStaticProps = async()=>{
-  const response = await fetch("https://ecommerce-next-js-three.vercel.app/api/hello")
+  const response = await fetch("https://ecommerce-next-js-three.vercel.app/api/products")
   const data = await response.json()
   
   return {
