@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { useDispatch } from 'react-redux'
 import { addToCart, removeFromCart, decreaseItemCount } from '../../redux/stateSlices/cartSlice'
 
-export default function CartCard({title, amount, count, image, id }) {
+export default function CartCard({title, amount, count, image, id, category }) {
     const [countState, setCountState] = React.useState(()=> count);
     const increaseCount = ()=>{
         setCountState((prevState)=> prevState+1)
@@ -25,7 +25,7 @@ export default function CartCard({title, amount, count, image, id }) {
     }
   return (
     <>
-        <Link href={"/collections/gadgets/products"}>
+        <Link href={`/collections/${category}/${title}`}>
             <a>
                 <div className={styles.hr}></div>
                 <div className='p-3 d-flex  pb-1 justify-content-between'>

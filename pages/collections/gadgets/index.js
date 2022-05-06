@@ -38,7 +38,7 @@ export default function GadgetsPage({ products }) {
               <FilterPrice />
               <FilterBrand brands={["bluetooth", "headset", "keyboard", "mouse", "headphones"]} />
             </div>
-            <PagesProductSection products={products}/>
+            <PagesProductSection products={products} category = {"gadgets"}/>
           </div>
         </div>
       </div>

@@ -38,7 +38,7 @@ export default function LaptopsPage({ products }) {
               <FilterPrice />
               <FilterBrand brands={["acer", "samsung", "hp", "toshiba", "macbook"]} />
             </div>
-            <PagesProductSection products={products}/>
+            <PagesProductSection products={products} category = {"laptops"}/>
           </div>
         </div>
       </div>

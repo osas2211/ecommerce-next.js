@@ -38,7 +38,7 @@ export default function PhonesPage({ products }) {
               <FilterPrice />
               <FilterBrand brands={["iphone", "samsung", "xioami", "tecno", "infinix"]} />
             </div>
-            <PagesProductSection products={ products }/>
+            <PagesProductSection products={ products } category = {"phones"}/>
           </div>
         </div>
       </div>

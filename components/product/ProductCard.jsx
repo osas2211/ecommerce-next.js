@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/stateSlices/cartSlice'
 
-export default function ProductCard({img, title, rating, progress, sold, amount, id, count}) {
+export default function ProductCard({img, title, rating, progress, sold, amount, id, count, category}) {
   const dispatch = useDispatch()
   const payload_data = {
     count: 1,
@@ -28,7 +28,7 @@ export default function ProductCard({img, title, rating, progress, sold, amount,
         <Image src={img} alt="" layout='fill' />
       </div>
       <div className={styles.product_details}>
-        <Link href={"/collections/gadgets/products"}><a className={styles.title}>{title}</a></Link>
+        <Link href={`/collections/${category}/${title}`}><a className={styles.title}>{title}</a></Link>
         <p className={styles.rating}>
           <Rating rating_value={rating} />
         </p>

@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/stateSlices/cartSlice'
 
-export default function ProductDetail() {
+export default function ProductDetail({ product }) {
     const [countState, setCountState] = React.useState(()=> 0);
     const increaseCount = ()=>{
         setCountState((prevState)=> prevState+1)
@@ -38,15 +38,15 @@ export default function ProductDetail() {
         <Container>
             <div className="d-block d-md-flex">
                 <div className={styles.img}>
-                    <Image src={phone1} alt="" layout='responsive'/>
+                    <Image src={product.image} alt="" layout='responsive'/>
                 </div>
                 <div className={styles.details +" ms-lg-5 my-5 my-lg-0"}>
-                    <p className={"text-primary h3 fw-light"}>Zmmyr 200Pcs Dust Flat Mouth</p>
+                    <p className={"text-primary h3 fw-light"}>{product.name}</p>
                     <div className={styles.rating}>
-                        <Rating rating_value={4}/>
-                        <small className='ms-3 text-muted'>2 Reviews</small>
+                        <Rating rating_value={product.rating}/>
+                        <small className='ms-3 text-muted'>{product.rating} Reviews</small>
                     </div>
-                    <p className="my-3 h3">$90.00</p>
+                    <p className="my-3 h3">${product.amount}</p>
                     <div className={styles.hr}></div>
                     <p>Availability: <span className='text-primary'>In stock</span></p>
                     <small className='font-light'>Typi non habent claritatem insitam est usus legentis in qui facit orum claritatem lectores legere me lius quod legunt saepius. Sit amet conse ctetur adipisicing elit sed do eiusmod tempor.</small>
