@@ -34,7 +34,7 @@ export default function ProductCard({img, title, rating, progress, sold, amount,
         </p>
         <div className='mb-3'>
           <span className={` fw-bold ${styles.amount}`}>${amount}</span>
-          <span className='px-3 text-muted'><strike>$799</strike></span>
+          <span className='px-3 text-muted'><strike>${Math.floor(amount*1.2)}</strike></span>
         </div> 
         <div className="progress" style={{height: "5px"}}>
           <div className="progress-bar bg-danger" style={{width: progress}}  role={"progressbar"} aria-valuenow={"25"} aria-valuemin={"0"} aria-valuemax={"100"}></div>

@@ -6,7 +6,7 @@ export default function Gadgets() {
   return (
     <>
       {
-        products.gadgets.map((gadget, num)=>{
+        products.gadgets.slice(0,5).map((gadget, num)=>{
           return <ProductCard img={gadget.image} title={gadget.name} rating={gadget.rating} progress="50%" key={num} amount={gadget.amount} id={gadget.id} count={gadget.count}/>
         })
       }

@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "../../styles/product_detail.module.css"
 import { Container, Button } from 'react-bootstrap'
-import phone1 from "../../images/iphone12-max.png"
+import phone1 from "../../images/phone2.jpg"
 import Rating from '../Rating'
 import Image from "next/image"
 import { faHeart } from '@fortawesome/free-solid-svg-icons'

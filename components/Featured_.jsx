@@ -2,10 +2,10 @@ import React from 'react'
 import styles from "../styles/featured2.module.css"
 import Rating from './Rating'
 import Image from "next/image"
-import img from "../images/product-127.jpg"
-import img2 from "../images/product-130.jpg"
-import img3 from "../images/product-125.jpg"
-import img4 from "../images/product-7.jpg"
+import img from "../images/phone2.jpg"
+import img2 from "../images/phone3.jpg"
+import img3 from "../images/phone4.jpg"
+import img4 from "../images/phone1.jpg"
 import Link from 'next/link'
 import ProductCardSmall from './product/ProductCardSmall'
 

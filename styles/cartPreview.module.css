@@ -67,8 +67,9 @@
     border-bottom: 1px solid rgba(99, 99, 99, 0.267);
 }
 .product .info{
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding: 0 1rem 0 0.5rem;
+    width: 70%;
 }
 .product small{
     font-size: 1rem;
@@ -86,6 +87,8 @@
     padding: 1rem 2rem;
     background-color: #fff;
 }
+
+
 @keyframes slideRight {
     from{
         transform: translateX(100%);

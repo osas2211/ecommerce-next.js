@@ -8,7 +8,7 @@ export default function Laptops() {
   return (
     <>
         {
-          laptops.map((laptop, num) => {
+          laptops && laptops.slice(0,5).map((laptop, num) => {
             return (<ProductCard img={laptop.image} title={laptop.name} rating={laptop.rating} progress="50%" key={laptop.id} id={laptop.id} amount={laptop.amount} count={laptop.count}/>)
           })
         }
