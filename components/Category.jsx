@@ -13,9 +13,7 @@ export default function Category({styles, image, category}) {
                         <Image src={image} alt=""/>
                     </div>
                     <Card.Body>
-                        <Card.Text>
                             <p className='text-capitalize'>{category}</p>
-                        </Card.Text>
                     </Card.Body>
                 </a>
             </Link>

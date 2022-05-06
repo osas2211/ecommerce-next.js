@@ -7,7 +7,18 @@ import { faFilter } from '@fortawesome/free-solid-svg-icons'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default function WatchesPage() {
+export const getStaticProps = async()=>{
+  const response = await fetch("https://ecommerce-next-js-three.vercel.app/api/products")
+  const data = await response.json()
+  
+  return {
+      props: {
+          products: data.watches
+      }
+  }
+}
+
+export default function WatchesPage({ products }) {
   const [options, setOptions ] = React.useState(false)
   const toggleOptions = ()=>{
     options ? setOptions(false) : setOptions(true)
@@ -27,7 +38,7 @@ export default function WatchesPage() {
               <FilterPrice />
               <FilterBrand brands={["hublot", "samsung", "xioami", "tecno", "infinix"]} />
             </div>
-            <PagesProductSection />
+            <PagesProductSection products={products}/>
           </div>
         </div>
       </div>
