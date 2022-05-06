@@ -11,11 +11,11 @@ export default function HomeHero() {
     <div>
         <Carousel variant="dark" className="pb-5 px-3">
         <Carousel.Item>
-          <HeroItem1 img={product} id="hero-product-1" amount={1999.99} title={"Iphone 8"} styles={styles}/>
+          <HeroItem1 img={product} id="hero-product-1" amount={1999} title={"Iphone 8"} styles={styles}/>
         </Carousel.Item>
 
         <Carousel.Item>
-          <HeroItem2 img={product2} id="hero-product-2" amount={749.99} title={"Next Gen Watch"} styles={styles}/>
+          <HeroItem2 img={product2} id="hero-product-2" amount={749} title={"Next Gen Watch"} styles={styles}/>
         </Carousel.Item>
       </Carousel>
     </div>

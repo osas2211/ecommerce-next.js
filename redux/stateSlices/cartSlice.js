@@ -45,6 +45,19 @@ export const cartSlice = createSlice({
             };
         },
 
+        decreaseItemCount: (state, action)=>{
+            return {
+                ...state,
+                counter: state.counter - 1,
+                total_amount: Number(state.total_amount) - Number(action.payload.amount),
+                products: state.products.map(product=> ({ ...product, 
+                    count: product.id == action.payload.id ? product.count - 1: product.count, 
+                })),
+                
+                
+            }
+        },
+
         removeFromCart: (state, action)=>{
             return {
                 ...state, products: [
@@ -62,5 +75,5 @@ export const cartSlice = createSlice({
 })
 
 
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, decreaseItemCount } = cartSlice.actions;
 export const cartReducer = cartSlice.reducer

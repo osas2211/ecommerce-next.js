@@ -9,24 +9,22 @@ export default function FilterPrice() {
               <Card.Title>Price</Card.Title>
           </Card.Header>
           <Card.Body>
-              <Card.Text>
-                <p className='d-flex'>
+                <div className='d-flex mb-1'>
                     <span className='me-2'><Form.Check /></span>
                     <span>$0 - $100</span>
-                </p>
-                <p className='d-flex'>
+                </div>
+                <div className='d-flex mb-1'>
                     <span className='me-2'><Form.Check /></span>
                     <span>$100 - $200</span>
-                </p>
-                <p className='d-flex'>
+                </div>
+                <div className='d-flex mb-1'>
                     <span className='me-2'><Form.Check /></span>
                     <span>$200 - $300</span>
-                </p>
-                <p className='d-flex'>
+                </div>
+                <div className='d-flex mb-1'>
                     <span className='me-2'><Form.Check /></span>
                     <span>$300 and above</span>
-                </p>
-              </Card.Text>
+                </div>
           </Card.Body>
 
         </Card>

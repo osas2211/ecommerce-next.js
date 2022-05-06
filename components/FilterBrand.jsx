@@ -9,14 +9,12 @@ export default function FilterBrand({ brands }) {
               <Card.Title>Brand</Card.Title>
           </Card.Header>
           <Card.Body>
-              <Card.Text>
                 { brands.map(((brand, key) => (
-                    <p className='d-flex' key={key}>
+                    <div className='d-flex' key={key}>
                         <span className='me-2'><Form.Check /></span>
                         <span className='text-capitalize'>{ brand }</span>
-                    </p>
+                    </div>
                 ))) }
-              </Card.Text>
           </Card.Body>
 
         </Card>

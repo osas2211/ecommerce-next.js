@@ -47,24 +47,21 @@ export default function Header() {
     {cartVisibility && <CartPreview cartToggle={cartToggleShow} onHide={cartToggleShow}/>}
 
 
-
-
     <Navbar bg="light" expand="lg" className='d-md-none'>
     <Container>
       <Navbar.Brand href="/"><p className="logo p-0 m-0">Eazy<span>Shop</span></p></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto text-capitalize">
-            <Nav.Link className='mb-2 mt-2'><Link href={"/"}><a>home</a></Link></Nav.Link>
-            <Nav.Link className='mb-2'><Link href={"/collections"}><a>collections</a></Link></Nav.Link>
-            <Nav.Link className='mb-2'><Link href={"/about"}><a>about</a></Link></Nav.Link>
-            <Nav.Link className='mb-2'><a href="https://osaretinfrank.me/" rel='noreferrer' target={"_blank"}>contact</a></Nav.Link>
-            <Nav.Link className='mb-2'><a>Search Products</a></Nav.Link>
-            <Nav.Link className='mb-2'><Link href={"/customer/account/login"}><a>Login</a></Link></Nav.Link>
-            <Nav.Link className={styles.cart + ' me-4 mb-4 fw-bold'} onClick={cartToggleShow}><a>Preview Cart</a>
+        <Nav>
+          <Link href={"/"}><a className='text-capitalize mb-1'>home</a></Link>
+          <Link href={"/collections"}><a className='text-capitalize mb-1'>collections</a></Link>
+          <Link href={"/about"}><a className='text-capitalize mb-1'>about</a></Link>
+          <a href="https://osaretinfrank.me/" rel='noreferrer' className='text-capitalize mb-1' target={"_blank"}>contact</a>
+          <Link href={"/customer/account/login"}><a className='text-capitalize mb-1'>Login</a></Link>
+          <p className={styles.cart + ' me-4 mb-4 fw-bold'} onClick={cartToggleShow}><a>Preview Cart</a>
               <span className='mt-2 bg-primary'>{cart.counter}</span>
-            </Nav.Link>
-            <p className='fw-bold mb-5'>${cart.total_amount}</p>
+          </p>
+          <p className='fw-bold '>${cart.total_amount}</p>
         </Nav>
       </Navbar.Collapse>
     </Container>

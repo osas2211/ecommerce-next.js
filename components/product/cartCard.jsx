@@ -6,15 +6,17 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import { useDispatch } from 'react-redux'
-import { removeFromCart } from '../../redux/stateSlices/cartSlice'
+import { addToCart, removeFromCart, decreaseItemCount } from '../../redux/stateSlices/cartSlice'
 
 export default function CartCard({title, amount, count, image, id }) {
     const [countState, setCountState] = React.useState(()=> count);
     const increaseCount = ()=>{
         setCountState((prevState)=> prevState+1)
+        dispatch({type: addToCart, payload: {id: id, count: 1, product_count: 1, amount: amount}})
     }
     const decreaseCount = ()=>{
         setCountState((prevState)=> prevState > 0 ? prevState-1 : prevState)
+        countState > 0 &&  dispatch({type: decreaseItemCount, payload: {id: id, count: 1, product_count: 1, amount: amount}})
     }
 
     const dispatch = useDispatch()
