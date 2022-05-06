@@ -1,6 +1,6 @@
 import React from 'react'
 import ProductCard from '../components/product/PagesProduct'
-import phone4 from "../images/product-7.jpg"
+import phone4 from "../images/phone1.jpg"
 
 export default function PagesProductSection() {
   // const [state, setState] = React.useState([])
