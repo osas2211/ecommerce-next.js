@@ -22,7 +22,9 @@ export const cartSlice = createSlice({
                         amount:action.payload.amount, 
                         image:action.payload.image,
                         id: action.payload.id,
-                        count: action.payload.product_count
+                        count: action.payload.product_count,
+                        category: action.payload.category,
+                        brand: action.payload.brand
                     }],
                     counter: Number(state.counter) + Number(action.payload.count),
                     total_amount: Number(state.total_amount) + Number(action.payload.amount * action.payload.product_count)

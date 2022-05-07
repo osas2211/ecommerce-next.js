@@ -31,11 +31,7 @@ export default function Cart() {
                                     id={product.id}
                                     amount={product.amount}
                                     title = {product.title}
-                                    category = { 
-                                        product.id.toString().length == 1 ? "laptops"  : 
-                                        product.id.toString().length == 2 ? "phones" :
-                                        product.id.toString().length == 3 ? "gadgets" : "watches"
-                                    }
+                                    category = { product.category }
                                 /> 
                             ))
                             : 

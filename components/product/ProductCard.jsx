@@ -28,7 +28,7 @@ export default function ProductCard({img, title, rating, progress, sold, amount,
         <Image src={img} alt="" layout='fill' />
       </div>
       <div className={styles.product_details}>
-        <Link href={`/collections/${category}/${title}`}><a className={styles.title}>{title}</a></Link>
+        <Link href={`/collections/${category}/${id}`}><a className={styles.title}>{title}</a></Link>
         <p className={styles.rating}>
           <Rating rating_value={rating} />
         </p>

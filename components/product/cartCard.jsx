@@ -25,7 +25,7 @@ export default function CartCard({title, amount, count, image, id, category }) {
     }
   return (
     <>
-        <Link href={`/collections/${category}/${title}`}>
+        <Link href={`/collections/${category}/${id}`}>
             <a>
                 <div className={styles.hr}></div>
                 <div className='p-3 d-flex  pb-1 justify-content-between'>

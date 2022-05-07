@@ -20,11 +20,13 @@ export default function ProductDetail({ product }) {
 
     const payload_data = {
         count: countState,
-        title: "Zmmyr 200Pcs Dust Flat Mouth",
-        image: phone1,
-        amount: 900,
-        id: "countState",
-        product_count: countState
+        title: product.name,
+        image: product.image,
+        amount: product.amount,
+        id: product.id,
+        product_count: countState,
+        brand: product.brand,
+        category: product.category
       }
 
     const dispatch = useDispatch()
@@ -63,7 +65,7 @@ export default function ProductDetail({ product }) {
                         <small className='text-capitalize'><span><FontAwesomeIcon icon={faHeart}/></span> add to wish list</small>
                     </div>
                     <div className={styles.hr + " my-4"}></div>
-                    <p>Categories: <small className='text-muted'>Phones, Iphone</small></p>
+                    <p>Categories: <small className='text-muted text-capitalize'>{`${product.category}  ${product.brand}`}</small></p>
                 </div>
             </div>
         </Container>
