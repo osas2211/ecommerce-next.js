@@ -3,15 +3,18 @@ import Image from 'next/image'
 import { useCart, actions } from '../../context/CartContext'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/stateSlices/cartSlice'
+import Link from 'next/link'
 
-export default function HeroItem2({img, title, rating, progress, sold, amount, id, count, styles}) {
+export default function HeroItem2({img, title, rating, progress, sold, amount, id, count, brand, category, styles}) {
     const payload_data = {
         count: 1,
         title: title,
         image: img,
         amount: amount,
         id: id,
-        product_count: 1
+        product_count: 1,
+        brand: brand,
+        category: category
       }
     const dispatch = useDispatch()
     const add = ()=>{
@@ -30,7 +33,7 @@ export default function HeroItem2({img, title, rating, progress, sold, amount, i
               <p className="pe-lg-5 mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci quae temporibus totam laudantium dolor expedita repellat exercitationem dignissimos delectus.</p>
               <p className="text-uppercase mb-0">starting from <span>${amount}</span></p>
               <div className="pt-3">
-                <a href="" className="btn-custom-2 me-3">Learn more</a>
+              <Link href={"/collections/watches/"+id}><a className="btn-custom-2 me-3">Learn more</a></Link>
                 <a href="#" onClick={add} className="btn-custom-1">Add to cart</a>
               </div>
           </div>

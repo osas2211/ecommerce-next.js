@@ -12,7 +12,7 @@ import phone2 from "../images/phone2.jpg"
 import phone3 from "../images/phone3.jpg"
 import phone4 from "../images/phone4.jpg"
 import phone5 from "../images/phone5.jpg"
-import phone6 from "../images/phone6.jpg"
+import phone6 from "../images/iphone12-max.png"
 import phone7 from "../images/phone7.jpg"
 import phone8 from "../images/phone8.jpg"
 
@@ -29,7 +29,7 @@ import gadget8 from "../images/gadget8.jpg"
 import watch1 from "../images/watch1.jpg"
 import watch2 from "../images/watch2.jpg"
 import watch3 from "../images/watch3.jpg"
-import watch4 from "../images/watch4.jpg"
+import watch4 from "../images/product-preview-4.jpg"
 import watch5 from "../images/watch5.jpg"
 import watch6 from "../images/watch6.jpg"
 import watch7 from "../images/watch7.jpg"
@@ -274,7 +274,7 @@ export const products = {
         image: watch4,
         name: "Geneva 2 Pieces Of Couple Luminous Led Wrist Watch",
         rating: 4,
-        amount: 18,
+        amount: 58,
         count: 0,
         category: "watches",
         brand: "Geneva"
