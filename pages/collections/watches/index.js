@@ -36,7 +36,7 @@ export default function WatchesPage({ products }) {
             <div className={options ? "filter me-5 filter-active" : "filter me-5"}>
               <div className='close-icon d-md-none mt-5' onClick={toggleOptions}><FontAwesomeIcon icon={faTimes}/></div>
               <FilterPrice />
-              <FilterBrand brands={["hublot", "samsung", "xioami", "tecno", "infinix"]} />
+              <FilterBrand brands={["diesel", "samsung", "geneva", "michael Kors", "mechanical", "generic"]} />
             </div>
             <PagesProductSection products={products} category = {"watches"}/>
           </div>

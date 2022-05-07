@@ -36,7 +36,7 @@ export default function PhonesPage({ products }) {
             <div className={options ? "filter me-5 filter-active" : "filter me-5"}>
               <div className='close-icon d-md-none mt-5' onClick={toggleOptions}><FontAwesomeIcon icon={faTimes}/></div>
               <FilterPrice />
-              <FilterBrand brands={["iphone", "samsung", "xioami", "tecno", "infinix"]} />
+              <FilterBrand brands={["apple", "samsung", "xiaomi", "tecno", "infinix"]} />
             </div>
             <PagesProductSection products={ products } category = {"phones"}/>
           </div>

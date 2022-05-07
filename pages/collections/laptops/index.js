@@ -36,7 +36,7 @@ export default function LaptopsPage({ products }) {
             <div className={options ? "filter me-5 filter-active" : "filter me-5"}>
               <div className='close-icon d-md-none mt-5' onClick={toggleOptions}><FontAwesomeIcon icon={faTimes}/></div>
               <FilterPrice />
-              <FilterBrand brands={["acer", "samsung", "hp", "toshiba", "macbook"]} />
+              <FilterBrand brands={["acer", "samsung", "hp", "lenovo", "apple", "dell"]} />
             </div>
             <PagesProductSection products={products} category = {"laptops"}/>
           </div>
