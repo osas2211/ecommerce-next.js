@@ -16,6 +16,7 @@ import phone6 from "../images/iphone12-max.png"
 import phone7 from "../images/phone7.jpg"
 import phone8 from "../images/phone8.jpg"
 
+
 import gadget1 from "../images/gadget1.jpg"
 import gadget2 from "../images/gadget2.jpg"
 import gadget3 from "../images/gadget3.jpg"
