@@ -20,6 +20,7 @@ export const getStaticProps = async()=>{
 
 export default function WatchesPage({ products }) {
   const [options, setOptions ] = React.useState(false)
+  const [productsState, setProductsState] = React.useState(products)
   const toggleOptions = ()=>{
     options ? setOptions(false) : setOptions(true)
   }
@@ -36,9 +37,9 @@ export default function WatchesPage({ products }) {
             <div className={options ? "filter me-5 filter-active" : "filter me-5"}>
               <div className='close-icon d-md-none mt-5' onClick={toggleOptions}><FontAwesomeIcon icon={faTimes}/></div>
               <FilterPrice />
-              <FilterBrand brands={["diesel", "samsung", "geneva", "michael Kors", "mechanical", "generic"]} />
+              <FilterBrand setProducts={setProductsState} productsState={productsState} products={products} brands={["diesel", "samsung", "geneva", "michael Kors", "mechanical", "generic"]} />
             </div>
-            <PagesProductSection products={products} category = {"watches"}/>
+            <PagesProductSection products={productsState} category = {"watches"}/>
           </div>
         </div>
       </div>
