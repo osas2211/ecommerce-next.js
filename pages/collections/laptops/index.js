@@ -36,7 +36,7 @@ export default function LaptopsPage({ products }) {
           <div className='d-block d-md-flex justify-content-between'>
             <div className={options ? "filter me-5 filter-active" : "filter me-5"}>
               <div className='close-icon d-md-none mt-5' onClick={toggleOptions}><FontAwesomeIcon icon={faTimes}/></div>
-              <FilterPrice />
+              {/* <FilterPrice /> */}
               <FilterBrand setProducts={setProductsState} productsState={productsState} products={products} brands={["acer", "samsung", "hp", "lenovo", "apple", "dell"]} />
             </div>
             <PagesProductSection products={productsState} category = {"laptops"}/>

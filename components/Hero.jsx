@@ -19,10 +19,10 @@ export default function Hero() {
                     <h1>GEAR 360</h1>
                     <h1>WEEK DEALS</h1>
                     <p>Top Quality Gadgets and Accessories</p>
-                    <Link href={"/"}><a className='btn-custom-4'>Discover Now</a></Link>
+                    <Link href={"/collections/gadgets"}><a className='btn-custom-4'>Discover Now</a></Link>
                 </div>
         </div>
-        <Link href={"/"} passHref>
+        <Link href={"/collections/gadgets"} passHref>
             <div className={styles.two}>
                 <div className={styles.hero_img}>
                     <Image src={two} alt="" layout='responsive'/>
@@ -33,7 +33,7 @@ export default function Hero() {
                 </div>
             </div>
         </Link>
-        <Link href={"/"} passHref>
+        <Link href={"/collections/gadgets"} passHref>
             <div className={styles.three}>
                 <div className={styles.hero_img}>
                     <Image src={three} alt="" layout='responsive'/>
