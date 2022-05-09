@@ -3,7 +3,12 @@ import styles from "../../styles/dashboard.module.css"
 import { faPencil, faWallet } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from "next/link"
+import { Button } from 'react-bootstrap'
 import { EditDetails } from './EditDetails'
+import { useSelector, useDispatch } from 'react-redux'
+import { logIn } from '../../redux/stateSlices/authSlice'
+import { signOut } from 'firebase/auth'
+import { auth } from '../../firebase/firebase'
 
 export default function AccountMain() {
   const [show, setShow] = React.useState(false)
@@ -32,6 +37,13 @@ export default function AccountMain() {
     setTogglePasswordEdit(true)
   }
 
+  const user = useSelector(state => state.auth)
+  const dispatch = useDispatch()
+  const handleSignOut = async (e)=>{
+    e.preventDefault()
+    await signOut(auth)
+  }
+
   return (
     <>
     <EditDetails 
@@ -41,7 +53,10 @@ export default function AccountMain() {
       addressEdit={toggleAddressEdit}
       passwordEdit={togglePasswordEdit} />
       <div className={styles.main + " rounded-3"}>
-        <header className='h5 px-3 pt-3'>Account Overview</header>
+        <div className="d-flex justify-content-between align-items-center px-3 pt-3">
+          <header className='h5 p-0 m-0'>Account Overview</header>
+          <div className='p-0 m-0'><Button variant="danger" onClick={handleSignOut}>Log Out</Button></div>
+        </div>
         <div className={styles.hr}></div>
         <div className='g-0 px-4 px-md-5 row justify-content-center justify-content-md-between'>
           <div className='col-md-5 col-12 my-4 border border-1'>
@@ -52,7 +67,7 @@ export default function AccountMain() {
             <div className={styles.hr +" my-0"}></div>
             <div className='p-3'>
                 <p className='p-0 m-0'>Frank John</p>
-                <small className='text-muted'>osaretin.frank10@gmail.com</small>
+                <small className='text-muted'>{ user.email && user.email }</small>
                 <a className='d-block text-uppercase mt-5 text-primary' style={{cursor: "pointer"}} onClick={onTogglePasswordEdit}>change password</a>
             </div>
           </div>

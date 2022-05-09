@@ -30,6 +30,7 @@
     cursor: pointer;
 }
 
+
 .list a::after{
     content: "";
     position: absolute;
@@ -44,6 +45,34 @@
 
 .list a:hover::after{
     transform: translateX(0%);
+}
+
+.online{
+    position: relative;
+    overflow: visible !important;
+}
+
+.online::after{
+    display: none;
+}
+  
+.online::before{
+    position: absolute;
+    content: "";
+    top: -2px;
+    right: -7px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgb(6, 221, 71);
+    z-index: 500;
+    transition: 200ms;
+}
+
+.online:hover::before{
+    width: 10px;
+    height: 10px;
+    top: -4px;
 }
 
 .cart{

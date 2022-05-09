@@ -14,6 +14,7 @@ import { Nav, Container, Navbar } from 'react-bootstrap'
 
 
 export default function Header() {
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn)
   const [cartVisibility, setCartVisibility] = React.useState(false)
   const cartToggleShow = (e)=>{
     cartVisibility ? setCartVisibility(false): setCartVisibility(true)
@@ -35,7 +36,11 @@ export default function Header() {
         <ul className={styles.list}>
             <li className='me-4 fw-bold'>USD</li>
             <li className='me-4'><a><FontAwesomeIcon icon={faSearch}/></a></li>
-            <li className='me-4'><Link href={"/customer/account/login"}><a className='d-inline-block bg-dark text-light px-1 border border-2 rounded'><FontAwesomeIcon icon={faSignIn}/><span className='ps-1'>Login</span></a></Link></li>
+            <li className='me-4'>{
+              isLoggedIn ? <Link href={"/customer/account/dashboard"}><a className={styles.online}><FontAwesomeIcon icon={faUser}/></a></Link> :
+              <Link href={"/customer/account/login"}><a className='d-inline-block bg-dark text-light px-1 border border-2 rounded'><FontAwesomeIcon icon={faSignIn}/><span className='ps-1'>Login</span></a></Link>
+              
+              }</li>
             <li className={styles.cart + ' me-4'} onClick={cartToggleShow}><a><FontAwesomeIcon icon={faCartShopping}/></a>
               <span>{cart.counter}</span>
             </li>
@@ -57,7 +62,10 @@ export default function Header() {
           <Link href={"/collections"}><a className='text-capitalize mb-1'>collections</a></Link>
           <Link href={"/about"}><a className='text-capitalize mb-1'>about</a></Link>
           <a href="https://osaretinfrank.me/" rel='noreferrer' className='text-capitalize mb-1' target={"_blank"}>contact</a>
-          <Link href={"/customer/account/login"}><a className='text-capitalize mb-1'>Login</a></Link>
+          {
+            isLoggedIn ? <Link href={"/customer/account/dashboard"}><a className='text-capitalize mb-1'>Profile</a></Link> :
+            <Link href={"/customer/account/login"}><a className='text-capitalize mb-1'>Login</a></Link>
+          }
           <p className={styles.cart + ' me-4 mb-4 fw-bold'} onClick={cartToggleShow}><a>Preview Cart</a>
               <span className='mt-2 bg-primary'>{cart.counter}</span>
           </p>

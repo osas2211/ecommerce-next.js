@@ -3,8 +3,26 @@ import Head from "next/head";
 import Header from './Header';
 import Info from './Info';
 import Footer from './Footer';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../firebase/firebase';
+import { useDispatch, useSelector } from 'react-redux';
+import { logIn } from '../redux/stateSlices/authSlice';
 
 export default function Layout({ children }) {
+  const dispatch = useDispatch()
+  // const user = useSelector(state => state.auth)
+  React.useEffect(()=> {
+    onAuthStateChanged(auth, user => {
+      if(user){
+        dispatch({ type: logIn, payload: {email: user.email, uid: user.uid, isLoggedIn: true} })
+      }
+      else{
+        dispatch({ type: logIn, payload: {email: "", uid: "", isLoggedIn: false} })
+      }
+    })
+  
+    console.log("hey")
+  })
   return (
     <>
         <Head>
