@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Alert } from 'react-bootstrap'
 import Link from "next/link"
 import styles from "../../styles/auth.module.css"
 import { useRouter } from 'next/router'
@@ -8,6 +8,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../../firebase/firebase'
 
 export function Login() {
+    const [error, setError] = useState()
     const router = useRouter()
     const isLoggedIn = useSelector(state => state.auth.isLoggedIn)
     React.useEffect(()=> {
@@ -25,8 +26,20 @@ export function Login() {
 
     const handleSignIn = async(e) => {
         e.preventDefault()
-        await signInWithEmailAndPassword(auth, email, pswd)
-        router.push("/customer/account/dashboard")
+        setError("")
+        try {
+            await signInWithEmailAndPassword(auth, email, pswd)
+            router.push("/customer/account/dashboard")
+        }
+        catch(error){
+            if (error.message.indexOf("auth/wrong-password") > -1 || error.message.indexOf("auth/user-not-found" > -1)){
+                setError("Wrong Email or Password")
+            }
+
+            if (error.message.indexOf("auth/network-request-failed") > -1){
+                setError("Network Disconnected")
+            }
+        }
     }
 
   return (
@@ -34,6 +47,7 @@ export function Login() {
         <p className='text-center text-uppercase text-primary fw-bold'>Login</p>
         <h5>Registered Customers</h5>
         <p>If you have an account, sign in with your email address.</p>
+        { error && <span><Alert variant='warning'>{error}</Alert></span> }
         <Form onSubmit={handleSignIn}>
             <div className='mb-3'>
                 <Form.Label>Email <span className='text-danger'>*</span></Form.Label>
@@ -46,7 +60,7 @@ export function Login() {
             </div>
             <div className='d-flex justify-content-between text-sm'>
                 <div className={ styles.showPassword +' d-flex'}>
-                    <Form.Check onClick={handlePasswordVisibitly} checked={showPassword}></Form.Check>
+                    <Form.Check onChange={handlePasswordVisibitly} checked={showPassword}></Form.Check>
                     <span className='ms-1' onClick={handlePasswordVisibitly}>show password</span>
                 </div>
                 <div>
