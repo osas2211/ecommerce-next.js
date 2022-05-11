@@ -11,6 +11,18 @@ import { signOut } from 'firebase/auth'
 import { auth, db } from '../../firebase/firebase'
 import { doc, getDoc } from 'firebase/firestore'
 
+
+const fetchUserData = async()=> {
+  try {
+    const userRef = user.email && doc(db, "users", user.user.uid)
+    const data = user.email && await getDoc(userRef)
+    user.email && setUserData(data.data())
+  } catch (error) {
+    console.log(error.message)
+  }
+}
+
+
 export default function AccountMain() {
   const [show, setShow] = React.useState(false)
   const [error, setError] = useState()
@@ -49,14 +61,10 @@ export default function AccountMain() {
   }
 
   const [userData, setUserData] = useState({});
-  const fetchUserData = async()=> {
-    const userRef = user.email && doc(db, "users", user.user.uid)
-    const data = user.email && await getDoc(userRef)
-    user.email && setUserData(data.data())
-  }
+ 
   useEffect(()=>{
     fetchUserData()
-  })
+  },[])
 
   return (
     <>
