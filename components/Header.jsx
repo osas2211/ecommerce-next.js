@@ -27,7 +27,7 @@ export default function Header() {
         <ul className={styles.list}>
             <li className='me-4'><Link href={"/"}><a>home</a></Link></li>
             <li className='me-4'><Link href={"/collections"}><a>collections</a></Link></li>
-            <li className='me-4'><Link href={"/about"}><a>about</a></Link></li>
+            <li className='me-4'><a href="https://osaretinfrank.me/" rel='noreferrer' target={"_blank"}>about</a></li>
             <li><a href="https://osaretinfrank.me/" rel='noreferrer' target={"_blank"}>contact</a></li>
         </ul>
 
@@ -35,7 +35,7 @@ export default function Header() {
 
         <ul className={styles.list}>
             <li className='me-4 fw-bold'>USD</li>
-            <li className='me-4'><a><FontAwesomeIcon icon={faSearch}/></a></li>
+            <li className='me-4'><Link href={"/search"}><a><FontAwesomeIcon icon={faSearch}/></a></Link></li>
             <li className='me-4'>{
               isLoggedIn ? <Link href={"/customer/account/dashboard"}><a className={styles.online}><FontAwesomeIcon icon={faUser}/></a></Link> :
               <Link href={"/customer/account/login"}><a className='d-inline-block bg-dark text-light px-1 border border-2 rounded'><FontAwesomeIcon icon={faSignIn}/><span className='ps-1'>Login</span></a></Link>
@@ -60,7 +60,8 @@ export default function Header() {
         <Nav>
           <Link href={"/"}><a className='text-capitalize mb-1'>home</a></Link>
           <Link href={"/collections"}><a className='text-capitalize mb-1'>collections</a></Link>
-          <Link href={"/about"}><a className='text-capitalize mb-1'>about</a></Link>
+          <a href="https://osaretinfrank.me/" rel='noreferrer' className='text-capitalize mb-1' target={"_blank"}>about</a>
+          <Link href={"/search"}><a className='text-capitalize mb-1'>search</a></Link>
           <a href="https://osaretinfrank.me/" rel='noreferrer' className='text-capitalize mb-1' target={"_blank"}>contact</a>
           {
             isLoggedIn ? <Link href={"/customer/account/dashboard"}><a className='text-capitalize mb-1'>Profile</a></Link> :

@@ -36,13 +36,13 @@ export default function ProductCard({img, title, rating, progress, sold, amount,
           <span className={` fw-bold ${styles.amount}`}>${amount}</span>
           <span className='px-3 text-muted'><strike>${Math.floor(amount*1.2)}</strike></span>
         </div> 
-        <div className="progress" style={{height: "5px"}}>
+        {/* <div className="progress" style={{height: "5px"}}>
           <div className="progress-bar bg-danger" style={{width: progress}}  role={"progressbar"} aria-valuenow={"25"} aria-valuemin={"0"} aria-valuemax={"100"}></div>
         </div>
         <div className={styles.sold}>
           <p>Sold: 103/157</p>
-        </div>
-        <div className={styles.heart}><FontAwesomeIcon icon={faHeart}/></div>
+        </div> */}
+        <div className={styles.heart} onClick={add}><FontAwesomeIcon icon={faHeart}/></div>
       </div>
       
       <a className='btn-custom-1' onClick={add}>add to cart</a>
