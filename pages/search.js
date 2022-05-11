@@ -23,11 +23,11 @@ export default function Search() {
                     <Button type='submit' className='text-light mt-2'>Search</Button>
                 </Form>
             </div>
-            <div className='mt-5 row'>
+            <div className='mt-5 row justify-content-center'>
                 {
                     searched.length == 0 ? <p className='text-center display-6 text-muted'>No Items Found</p> 
                     : searched.map(product => {
-                        return <div key={product.id} className={"col-3 mb-4"}><ProductCard img={product.image} amount={product.amount} title={product.name} rating={product.rating} category={product.category} count = {product.count} id={product.id} sold={50}/></div>
+                        return <div key={product.id} className={"col-10 col-md-6 col-lg-3 mb-4"}><ProductCard img={product.image} amount={product.amount} title={product.name} rating={product.rating} category={product.category} count = {product.count} id={product.id} sold={50}/></div>
                     })
                 }
             </div>
