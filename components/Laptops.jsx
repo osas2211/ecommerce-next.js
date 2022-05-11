@@ -9,7 +9,7 @@ export default function Laptops( {category} ) {
     <>
         {
           laptops && laptops.slice(0,5).map((laptop, num) => {
-            return (<ProductCard category={"laptops"} img={laptop.image} title={laptop.name} rating={laptop.rating} progress="50%" key={laptop.id} id={laptop.id} amount={laptop.amount} count={laptop.count}/>)
+            return (<ProductCard category={"laptops"} img={laptop.image} title={laptop.name} rating={laptop.rating} progress="50%" key={laptop.id} id={laptop.id} amount={laptop.amount} count={laptop.count} brand={laptop.brand}/>)
           })
         }
     </>

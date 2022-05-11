@@ -12,15 +12,6 @@ import { auth, db } from '../../firebase/firebase'
 import { doc, getDoc } from 'firebase/firestore'
 
 
-const fetchUserData = async()=> {
-  try {
-    const userRef = user.email && doc(db, "users", user.user.uid)
-    const data = user.email && await getDoc(userRef)
-    user.email && setUserData(data.data())
-  } catch (error) {
-    console.log(error.message)
-  }
-}
 
 
 export default function AccountMain() {
@@ -62,9 +53,19 @@ export default function AccountMain() {
 
   const [userData, setUserData] = useState({});
  
+const fetchUserData = async()=> {
+  try {
+    const userRef = user.email && doc(db, "users", user.user.uid)
+    const data = user.email && await getDoc(userRef)
+    user.email && setUserData(data.data())
+    console.log("hey")
+  } catch (error) {
+    console.log(error.message)
+  }
+}
   useEffect(()=>{
     fetchUserData()
-  },[])
+  }, [show])
 
   return (
     <>

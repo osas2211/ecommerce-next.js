@@ -1,6 +1,6 @@
 .product{
     background-color: #fff;
-    padding: 0.5rem 1rem 0.5rem 1rem;
+    padding: 1rem 1rem 0.5rem 1rem;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -40,10 +40,13 @@
 .title{
     margin-top: 1rem;
     margin-bottom: 0;
+    width: 100%;
     font-size: 0.9rem;
     color: var(--bs-primary);
     font-weight: bold;
     text-transform: capitalize;
+    z-index: 2;
+    position: relative;
 }
 
 .rating{

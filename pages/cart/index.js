@@ -33,6 +33,7 @@ export default function Cart() {
                                     amount={product.amount}
                                     title = {product.title}
                                     category = { product.category }
+                                    brand = { product.brand }
                                 /> 
                             ))
                             : 

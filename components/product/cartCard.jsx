@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { useDispatch } from 'react-redux'
 import { addToCart, removeFromCart, decreaseItemCount } from '../../redux/stateSlices/cartSlice'
 
-export default function CartCard({title, amount, count, image, id, category }) {
+export default function CartCard({title, amount, count, image, id, category, brand }) {
     const [countState, setCountState] = React.useState(()=> count);
     const increaseCount = ()=>{
         setCountState((prevState)=> prevState+1)
@@ -36,7 +36,7 @@ export default function CartCard({title, amount, count, image, id, category }) {
                         <p className='m-0'>{title}</p>
                         <div>
                             <small className='text-muted'>Brand:</small>
-                            <small className='ms-1'>Iphone</small>
+                            <small className='ms-1 text-capitalize'>{brand}</small>
                         </div>
                         <div className='mt-1'>
                             <p className='small m-0'>EazyShop <span className='text-primary'>Express</span></p>
