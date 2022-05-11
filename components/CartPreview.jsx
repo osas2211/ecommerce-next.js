@@ -45,7 +45,7 @@ export default function CartPreview({cartToggle, onHide}) {
                             </div>
                             <div className='px-3'>
                                 <div><Link href={"/cart"}><a className='btn-custom-1 w-100 text-center mb-2' onClick={cartToggle}>view cart</a></Link></div>
-                                <div><Link href={"/"}><a className='btn-custom-2 w-100 text-center' onClick={cartToggle}>proceed to checkout</a></Link></div>
+                                <div><Link href={"/cart"}><a className='btn-custom-2 w-100 text-center' onClick={cartToggle}>proceed to checkout</a></Link></div>
                             </div>
                         </div>
                     </div>

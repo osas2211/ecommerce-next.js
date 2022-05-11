@@ -5,6 +5,7 @@ import Link from "next/link"
 import CartCard from '../../components/product/cartCard'
 import { Button } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
+import Checkout from '../../components/checkout'
 
 
 
@@ -49,14 +50,12 @@ export default function Cart() {
                             <p className='px-2 text-uppercase m-0 fw-bold'>$ {cart.total_amount}</p>
                         </div>
                         <small className='p-2 m-0 fw-light d-block'>Delivery fees not included yet.</small>
+                        <div className='p-2 m-0 fw-light d-block'>
+                            <small>Use the card number <span className='fw-bold'>4187427415564246</span> with CVV <span className='fw-bold'>828</span> and expiry <span className='fw-bold'>09/32</span> to test the payment feature. It works!</small></div>
                         <div className={styles.hr}></div>
                         {
                             cart.total_amount == 0 ? <></> : 
-                            <Link href={"/"}>
-                                <a>
-                                    <Button className='text-light fw-light w-100 text-uppercase mt-2'>checkout ($ {cart.total_amount})</Button>
-                                </a>
-                            </Link>
+                            <Checkout amount={cart.total_amount}/>
                         }
                     </div>
 
