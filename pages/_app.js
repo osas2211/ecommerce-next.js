@@ -1,5 +1,6 @@
 import "../styles/bootstrap.css"
 import '../styles/globals.css'
+import '../styles/svg_background.css'
 import '../styles/btn.css'
 import Layout from '../components/Layout'
 import { store } from "../redux/store/store"

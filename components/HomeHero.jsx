@@ -13,7 +13,7 @@ export default function HomeHero() {
   
 
   return (
-    <div>
+    <div className=''>
         <Carousel variant="dark" className="pb-5 px-3">
         <Carousel.Item>
           <HeroItem1 img={hero1.image} id={hero1.id} brand={hero1.brand} category={hero1.category} amount={hero1.amount} title={hero1.name} styles={styles}/>

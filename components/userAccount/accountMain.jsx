@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "../../styles/dashboard.module.css"
 import { faPencil, faWallet } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,14 +8,19 @@ import { EditDetails } from './EditDetails'
 import { useSelector, useDispatch } from 'react-redux'
 import { logIn } from '../../redux/stateSlices/authSlice'
 import { signOut } from 'firebase/auth'
-import { auth } from '../../firebase/firebase'
+import { auth, db } from '../../firebase/firebase'
+import { doc, getDoc } from 'firebase/firestore'
 
 export default function AccountMain() {
   const [show, setShow] = React.useState(false)
+  const [error, setError] = useState()
   const [toggleNameEdit, setToggleNameEdit] = React.useState(false)
   const [toggleAddressEdit, setToggleAddressEdit] = React.useState(false)
   const [togglePasswordEdit, setTogglePasswordEdit] = React.useState(false)
-  const onHide = ()=> setShow(false)
+  const onHide = ()=> {
+    setShow(false)
+    setError("")
+  }
   const onToggleNameEdit = () => {
     setShow(true)
     setToggleNameEdit(true)
@@ -38,17 +43,28 @@ export default function AccountMain() {
   }
 
   const user = useSelector(state => state.auth)
-  const dispatch = useDispatch()
   const handleSignOut = async (e)=>{
     e.preventDefault()
     await signOut(auth)
   }
 
+  const [userData, setUserData] = useState({});
+  const fetchUserData = async()=> {
+    const userRef = user.email && doc(db, "users", user.user.uid)
+    const data = user.email && await getDoc(userRef)
+    user.email && setUserData(data.data())
+  }
+  useEffect(()=>{
+    fetchUserData()
+  })
+
   return (
     <>
     <EditDetails 
       show={show} 
-      onHide={onHide} 
+      onHide={onHide}
+      error={error}
+      setError = {setError} 
       accEdit={toggleNameEdit} 
       addressEdit={toggleAddressEdit}
       passwordEdit={togglePasswordEdit} />
@@ -66,8 +82,8 @@ export default function AccountMain() {
             </header>
             <div className={styles.hr +" my-0"}></div>
             <div className='p-3'>
-                <p className='p-0 m-0'>Frank John</p>
-                <small className='text-muted'>{ user.email && user.email }</small>
+                <p className='p-0 m-0'>{userData && userData.name}</p>
+                <small className='text-muted'>{userData && userData.email }</small>
                 <a className='d-block text-uppercase mt-5 text-primary' style={{cursor: "pointer"}} onClick={onTogglePasswordEdit}>change password</a>
             </div>
           </div>
@@ -80,10 +96,10 @@ export default function AccountMain() {
             <div className={styles.hr +" my-0"}></div>
             <div className='p-3'>
                 <p className='p-0 m-0'>Your default shipping address:</p>
-                <small className='text-muted d-block'>Osaretin Frank</small>
-                <small className='text-muted d-block'>33 universal street off medical stores road</small>
-                <small className='text-muted d-block'>Universal bus stop</small>
-                <small className='text-muted d-block'>Egor-Egor, Edo</small>
+                <small className='text-muted d-block'>{userData && userData.name}</small>
+                <small className='text-muted d-block'>{userData && userData.address}</small>
+                <small className='text-muted d-block'>{userData && userData.landmark}</small>
+                <small className='text-muted d-block'>{userData && userData.city}</small>
             </div>
           </div>
 

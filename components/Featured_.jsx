@@ -11,7 +11,7 @@ import ProductCardSmall from './product/ProductCardSmall'
 
 export default function Featured() {
   return (
-    <div className={styles.featured}>
+    <div className={styles.featured +" svg-background"}>
       <h3>Top Featured Products</h3>
       <div className={styles.featured_detail}>
         <div className={styles.one}>

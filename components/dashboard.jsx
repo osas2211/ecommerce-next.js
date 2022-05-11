@@ -10,7 +10,7 @@ export default function AccountOverview() {
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn)
   React.useEffect(()=>{
     if (!isLoggedIn){
-      useRouter.push("/")
+      useRouter.push("/customer/account/login")
     }
   })
   return (

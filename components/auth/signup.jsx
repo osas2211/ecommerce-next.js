@@ -3,7 +3,9 @@ import { Form, Button, Alert } from 'react-bootstrap'
 import Link from "next/link"
 import styles from "../../styles/auth.module.css"
 import { auth } from '../../firebase/firebase'
-import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { db } from '../../firebase/firebase'
+import { doc, setDoc } from 'firebase/firestore'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
 
@@ -33,7 +35,16 @@ export function SignUp() {
         setError("")
         try {
             const response = await createUserWithEmailAndPassword(auth, email, pswd)
-            const user = response.user.email
+            const userEmail = response.user.email
+            const userId = response.user.uid
+            const userRef = doc(db, "users", userId)
+            await setDoc(userRef, {
+                name: `${first} ${last}`,
+                email: userEmail,
+                address: "not set",
+                landmark: "not set",
+                city: "not set"
+            })
             route.push("/customer/account/dashboard")
         } catch (error) {
             console.log(error.message)

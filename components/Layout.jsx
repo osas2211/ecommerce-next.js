@@ -14,14 +14,12 @@ export default function Layout({ children }) {
   React.useEffect(()=> {
     onAuthStateChanged(auth, user => {
       if(user){
-        dispatch({ type: logIn, payload: {email: user.email, uid: user.uid, isLoggedIn: true} })
+        dispatch({ type: logIn, payload: {email: user.email, uid: user.uid, isLoggedIn: true, user: user} })
       }
       else{
-        dispatch({ type: logIn, payload: {email: "", uid: "", isLoggedIn: false} })
+        dispatch({ type: logIn, payload: {email: "", uid: "", user: {}, isLoggedIn: false} })
       }
     })
-  
-    console.log("hey")
   })
   return (
     <>

@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../firebase/firebase";
 
 export const authSlice = createSlice({
     name : "auth",
@@ -16,7 +14,8 @@ export const authSlice = createSlice({
                 ...state, 
                 isLoggedIn: action.payload.isLoggedIn,
                 uid: action.payload.uid,
-                email: action.payload.email
+                email: action.payload.email,
+                user: action.payload.user
             }
         }
     }
